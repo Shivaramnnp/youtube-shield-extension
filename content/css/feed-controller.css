@@ -1,0 +1,10 @@
+/* Shorts Shield - Feed Controller Styles */
+
+body.shorts-shield-feed-filtered ytd-rich-item-renderer.off-topic {
+  display: none !important;
+}
+
+/* Ensure the video card is relative so the absolute overlay is positioned correctly */
+ytd-rich-item-renderer {
+  position: relative;
+}

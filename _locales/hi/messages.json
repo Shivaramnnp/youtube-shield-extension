@@ -1,0 +1,58 @@
+{
+  "extName": {
+    "message": "YouTube Shield",
+    "description": "The name of the extension"
+  },
+  "extDesc": {
+    "message": "यूट्यूब पर पूर्ण नियंत्रण। विकर्षणों को रोकें, ध्यान केंद्रित करें, ऑडियो बढ़ाएं और अपनी पढ़ाई को बेहतर बनाएं।",
+    "description": "The description of the extension"
+  },
+  "shortsBlocker": {
+    "message": "शॉर्ट्स अवरोधक",
+    "description": "Label for Shorts Blocker toggle"
+  },
+  "studyMode": {
+    "message": "अध्ययन मोड",
+    "description": "Label for Study Mode toggle"
+  },
+  "goalMode": {
+    "message": "लक्ष्य मोड",
+    "description": "Label for Goal Mode toggle"
+  },
+  "cleanUI": {
+    "message": "क्लीन इंटरफ़ेस",
+    "description": "Label for Clean UI toggle"
+  },
+  "autoSkipAds": {
+    "message": "विज्ञापन स्वतः छोड़ें",
+    "description": "Label for Auto Skip Ads toggle"
+  },
+  "timeManager": {
+    "message": "समय प्रबंधक",
+    "description": "Label for Time Manager toggle"
+  },
+  "volumeBooster": {
+    "message": "वॉल्यूम बूस्टर",
+    "description": "Label for Volume Booster"
+  },
+  "bassBoost": {
+    "message": "बास बूस्ट",
+    "description": "Label for Bass Boost"
+  },
+  "graphicEQ": {
+    "message": "10-बैंड इक्वलाइज़र",
+    "description": "Label for Graphic Equalizer"
+  },
+  "dashboard": {
+    "message": "डैशबोर्ड",
+    "description": "Label for Dashboard button"
+  },
+  "active": {
+    "message": "सक्रिय",
+    "description": "Status active"
+  },
+  "paused": {
+    "message": "विराम",
+    "description": "Status paused"
+  }
+}

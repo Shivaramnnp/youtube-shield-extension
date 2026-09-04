@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Shield — Pro Dashboard & Settings</title>
+  <link rel="stylesheet" href="options.css">
+  <link rel="stylesheet" href="../assets/fonts/inter.css">
+  <link rel="icon" type="image/png" href="../assets/icons/icon32.png">
+</head>
+<body>
+  <!-- Navigation Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="shield-icon">🛡️</span>
+      <div class="logo-text">
+        <span class="brand-title">YouTube Shield</span>
+        <span class="brand-subtitle">Focus & Audio Suite</span>
+      </div>
+    </div>
+
+    <ul class="nav-menu" role="tablist" aria-label="Dashboard Navigation">
+      <li class="active" data-tab="focus" role="tab" tabindex="0" aria-selected="true" aria-controls="focus-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">🎯</span>
+          <span class="nav-label">Focus Features</span>
+        </div>
+        <span class="nav-badge">6</span>
+      </li>
+      <li data-tab="audio" role="tab" tabindex="0" aria-selected="false" aria-controls="audio-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">🎛️</span>
+          <span class="nav-label">Audio Studio</span>
+        </div>
+        <span class="nav-badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4);">DSP</span>
+      </li>
+      <li data-tab="timemanager" role="tab" tabindex="0" aria-selected="false" aria-controls="timemanager-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">⏳</span>
+          <span class="nav-label">Time Manager</span>
+        </div>
+        <span class="nav-badge">2</span>
+      </li>
+      <li data-tab="ui" role="tab" tabindex="0" aria-selected="false" aria-controls="ui-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">🧹</span>
+          <span class="nav-label">UI Cleaner</span>
+        </div>
+        <span class="nav-badge">7</span>
+      </li>
+      <li data-tab="blocklist" role="tab" tabindex="0" aria-selected="false" aria-controls="blocklist-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">🛡️</span>
+          <span class="nav-label">Custom Blocklist</span>
+        </div>
+        <span id="nav-blocklist-badge" class="nav-badge">0</span>
+      </li>
+      <li data-tab="analytics" role="tab" tabindex="0" aria-selected="false" aria-controls="analytics-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Analytics</span>
+        </div>
+        <span class="nav-badge live-badge">LIVE</span>
+      </li>
+      <li data-tab="gamification" role="tab" tabindex="0" aria-selected="false" aria-controls="gamification-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">🏆</span>
+          <span class="nav-label">Achievements</span>
+        </div>
+        <span class="nav-badge ap-badge">22</span>
+      </li>
+      <li data-tab="about" role="tab" tabindex="0" aria-selected="false" aria-controls="about-tab">
+        <div class="nav-item-content">
+          <span class="nav-icon">ℹ️</span>
+          <span class="nav-label">About</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="system-status-pill">
+        <span class="status-dot"></span>
+        <span class="status-text">Engine Online</span>
+      </div>
+      <div class="version-tag">v1.0.0 Pro</div>
+    </div>
+  </aside>
+
+  <!-- Main Content Dashboard -->
+  <main class="main-content">
+    <header class="header">
+      <div class="header-pretitle">YOUTUBE SHIELD CONTROL CENTER</div>
+      <h1>Settings & Analytics</h1>
+      <p>Configure advanced distraction shielding, audio studio filters, daily watch budgets, and track mastery progression.</p>
+    </header>
+
+    <!-- 1. Focus Tab -->
+    <section id="focus-tab" class="tab-content active" role="tabpanel" aria-labelledby="tab-focus">
+      <!-- Core Shielding Features -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Core Shielding Features</h2>
+            <p class="subtitle">Eliminate algorithm hooks, enable distraction-free watch player, and focus on your learning goals.</p>
+          </div>
+          <span class="card-chip chip-blue">Shielding v1</span>
+        </div>
+        
+        <label class="setting-row" for="opt-shortsBlocker">
+          <div class="setting-info">
+            <h3>Shorts Blocker</h3>
+            <p>Hide Shorts buttons, shelves, feed entries, and intercept direct URL navigation.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-shortsBlocker" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <label class="setting-row" for="opt-focusMode">
+          <div class="setting-info">
+            <h3>Focus Mode</h3>
+            <p>Clean distraction-free interface, hide recommendations, comments, and sidebars.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-focusMode" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <label class="setting-row" for="opt-ghostShield">
+          <div class="setting-info">
+            <h3>Ghost Shield (Strict Purge) 👻</h3>
+            <p>Completely vaporizes blocked channels and keywords from feeds and strictly denies video playback.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-ghostShield" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <label class="setting-row" for="opt-studyMode">
+          <div class="setting-info">
+            <h3>Study Mode (Productivity HUD & Pomodoro)</h3>
+            <p>Show floating Pomodoro study banner with work/break countdown timer and video alignment feedback.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-studyMode" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <!-- Pomodoro Configuration Panel -->
+        <div class="setting-row-group" id="pomodoro-settings-group">
+          <div class="setting-group-header">
+            <div class="group-title">
+              <span class="group-icon">⏱️</span>
+              <span>Pomodoro Study Cycle Configuration</span>
+            </div>
+            <span class="group-badge">Active in Study Mode</span>
+          </div>
+
+          <div class="setting-row sub-setting-row">
+            <div class="setting-info">
+              <h4>Enable Pomodoro Cycle Timer</h4>
+              <p>Automate work intervals and restful breaks during Study Mode sessions.</p>
+            </div>
+            <div class="toggle-switch">
+              <input type="checkbox" id="opt-pomo-enabled" role="switch" aria-checked="false">
+              <span class="slider"></span>
+            </div>
+          </div>
+
+          <div class="pomo-grid">
+            <div class="pomo-col">
+              <label for="opt-pomo-workMinutes" class="pomo-label">Work Interval (min):</label>
+              <input type="number" id="opt-pomo-workMinutes" min="1" max="180" value="25" class="num-input-full">
+            </div>
+            <div class="pomo-col">
+              <label for="opt-pomo-breakMinutes" class="pomo-label">Short Break (min):</label>
+              <input type="number" id="opt-pomo-breakMinutes" min="1" max="60" value="5" class="num-input-full">
+            </div>
+            <div class="pomo-col">
+              <label for="opt-pomo-longBreakMinutes" class="pomo-label">Long Break (min):</label>
+              <input type="number" id="opt-pomo-longBreakMinutes" min="1" max="120" value="15" class="num-input-full">
+            </div>
+            <div class="pomo-col">
+              <label for="opt-pomo-cycles" class="pomo-label">Cycles to Long Break:</label>
+              <input type="number" id="opt-pomo-cycles" min="1" max="10" value="4" class="num-input-full">
+            </div>
+          </div>
+          
+          <div class="pomo-toggles-row">
+            <label class="pomo-checkbox-label">
+              <input type="checkbox" id="opt-pomo-soundAlerts">
+              <span>Play pleasant audio chimes on interval transitions</span>
+            </label>
+            <label class="pomo-checkbox-label">
+              <input type="checkbox" id="opt-pomo-autoPause">
+              <span>Automatically pause YouTube playback during break intervals</span>
+            </label>
+          </div>
+        </div>
+
+        <label class="setting-row" for="opt-goalMode">
+          <div class="setting-info">
+            <h3>Goal Mode (Strict Topic Shield)</h3>
+            <p>Strict focus shield: block non-educational content and reinforce learning sessions.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-goalMode" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <label class="setting-row" for="opt-autoSkipAds">
+          <div class="setting-info">
+            <h3>Auto Skip Ads</h3>
+            <p>Automatically click the "Skip Ad" button the moment it appears — no manual click needed. Works on all skippable YouTube ad formats.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-autoSkipAds" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <label class="setting-row" for="opt-audioEffects">
+          <div class="setting-info">
+            <h3>Enable Audio Effects & Chimes</h3>
+            <p>Play celebratory gaming sound effects on badge unlocks, rank promotions, and daily limit alerts.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-audioEffects" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <!-- 2. Audio Studio Tab (Dedicated Page) -->
+    <section id="audio-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-audio">
+      <!-- 🎼 Real-Time Music Spectrum & Audio Analyzer Card -->
+      <div class="card analyzer-card">
+        <div class="card-header-row">
+          <div>
+            <h2>🎼 Real-Time Music & Audio Spectrum Analyzer</h2>
+            <p class="subtitle">Studio-grade multi-mode audio frequency visualizer with 60 FPS neon FFT bars, analog oscilloscope waveform, dynamic radial beat pulse, and live acoustic frequency telemetry.</p>
+          </div>
+          <span id="opt-audio-source-status" class="card-chip chip-cyan">📡 LIVE YOUTUBE AUDIO</span>
+        </div>
+
+        <div class="analyzer-toolbar">
+          <div class="analyzer-modes" role="tablist" aria-label="Visualizer Modes">
+            <button class="analyzer-mode-btn active" data-mode="bars" type="button" role="tab" aria-selected="true">📊 Neon FFT Bars</button>
+            <button class="analyzer-mode-btn" data-mode="wave" type="button" role="tab" aria-selected="false">〰️ Waveform Scope</button>
+            <button class="analyzer-mode-btn" data-mode="radial" type="button" role="tab" aria-selected="false">⚡ Radial Pulse</button>
+            <button class="analyzer-mode-btn" data-mode="fire" type="button" role="tab" aria-selected="false">🔥 Cyber Heatmap</button>
+          </div>
+          <div class="analyzer-demo-controls">
+            <button id="opt-analyzer-demo-btn" class="filter-pill pill-cyan" type="button">▶ Play Audio Demo Synth</button>
+            <select id="opt-analyzer-synth-genre" class="num-input synth-select" aria-label="Demo Audio Track">
+              <option value="synthwave">🎵 Cyberpunk Synthwave</option>
+              <option value="lofi">☕ Lo-Fi Chill Beats</option>
+              <option value="bass">🔊 Deep 808 Sub-Bass</option>
+              <option value="acoustic">🎸 Acoustic Harmony</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="analyzer-canvas-container">
+          <canvas id="opt-audio-visualizer-canvas" class="analyzer-canvas" width="800" height="200"></canvas>
+          <div class="analyzer-overlay-stats">
+            <div class="stat-badge"><span class="stat-lbl">PEAK:</span> <span id="opt-vis-peak" class="stat-val">-inf dB</span></div>
+            <div class="stat-badge"><span class="stat-lbl">RMS:</span> <span id="opt-vis-rms" class="stat-val">0%</span></div>
+            <div class="stat-badge"><span class="stat-lbl">BEAT:</span> <span id="opt-vis-beat-indicator" class="stat-dot"></span></div>
+          </div>
+        </div>
+
+        <!-- 5-Band Live Energy Meters -->
+        <div class="analyzer-meters-grid">
+          <div class="analyzer-meter-col">
+            <div class="meter-header">
+              <span class="meter-name">Sub-Bass</span>
+              <span id="opt-meter-subbass" class="meter-val">0%</span>
+            </div>
+            <div class="meter-bar-track"><div id="opt-meter-bar-subbass" class="meter-bar-fill bar-purple" style="width:0%"></div></div>
+            <span class="meter-freq">20-60 Hz</span>
+          </div>
+          <div class="analyzer-meter-col">
+            <div class="meter-header">
+              <span class="meter-name">Bass / Kick</span>
+              <span id="opt-meter-bass" class="meter-val">0%</span>
+            </div>
+            <div class="meter-bar-track"><div id="opt-meter-bar-bass" class="meter-bar-fill bar-blue" style="width:0%"></div></div>
+            <span class="meter-freq">60-250 Hz</span>
+          </div>
+          <div class="analyzer-meter-col">
+            <div class="meter-header">
+              <span class="meter-name">Midrange</span>
+              <span id="opt-meter-mid" class="meter-val">0%</span>
+            </div>
+            <div class="meter-bar-track"><div id="opt-meter-bar-mid" class="meter-bar-fill bar-green" style="width:0%"></div></div>
+            <span class="meter-freq">250Hz-2kHz</span>
+          </div>
+          <div class="analyzer-meter-col">
+            <div class="meter-header">
+              <span class="meter-name">High-Mids</span>
+              <span id="opt-meter-highmids" class="meter-val">0%</span>
+            </div>
+            <div class="meter-bar-track"><div id="opt-meter-bar-highmids" class="meter-bar-fill bar-yellow" style="width:0%"></div></div>
+            <span class="meter-freq">2kHz-6kHz</span>
+          </div>
+          <div class="analyzer-meter-col">
+            <div class="meter-header">
+              <span class="meter-name">Treble / Air</span>
+              <span id="opt-meter-treble" class="meter-val">0%</span>
+            </div>
+            <div class="meter-bar-track"><div id="opt-meter-bar-treble" class="meter-bar-fill bar-pink" style="width:0%"></div></div>
+            <span class="meter-freq">6kHz-20kHz</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audio Enhancements Card -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>🔊 Studio Audio Suite</h2>
+            <p class="subtitle">Real-time Web Audio API signal processing with 600% volume amplification, lowshelf bass booster, and 10-band studio graphic EQ.</p>
+          </div>
+          <span class="card-chip chip-purple">Web Audio DSP</span>
+        </div>
+
+        <!-- Thermal & High Volume Alert Card -->
+        <div id="opt-audio-thermal-alert" class="opt-thermal-alert-card" style="display: none; background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 10px; padding: 12px 16px; margin: 12px 0;">
+          <div style="display: flex; align-items: flex-start; gap: 10px;">
+            <span style="font-size: 18px;">🔥</span>
+            <div>
+              <h4 style="color: #fbbf24; margin: 0 0 4px 0; font-size: 13px; font-weight: 700;">High Amplification &amp; Thermal Protection Alert</h4>
+              <p style="color: #e2e8f0; margin: 0; font-size: 11.5px; line-height: 1.45;">Amplifying volume above 250% or bass above +12 dB draws high current from internal laptop speaker amplifiers, which causes chassis heating and acoustic distortion. We recommend keeping levels between 150%–250% or listening with headphones. Noise Remover &amp; Soft Limiter are actively protecting against clipping.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volume Booster Slider -->
+        <div class="setting-row slider-setting-row">
+          <div class="setting-info">
+            <h3>Volume Booster (600%)</h3>
+            <p>Amplify YouTube audio beyond standard 100% volume — up to 600% (6× louder) with clean digital gain processing.</p>
+          </div>
+          <div class="slider-control-group">
+            <div class="slider-header">
+              <span class="slider-label">Master Amplification</span>
+              <span id="opt-vol-value" class="slider-value-display vol-val">100%</span>
+            </div>
+            <input type="range" id="opt-vol-slider" min="100" max="600" step="10" value="100" class="custom-range-slider range-blue" aria-label="Volume Booster" />
+          </div>
+        </div>
+
+        <!-- Bass Booster Slider -->
+        <div class="setting-row slider-setting-row">
+          <div class="setting-info">
+            <h3>Bass Booster (+20 dB)</h3>
+            <p>Enhance low-frequency depth and speech presence with a 150Hz lowshelf filter and up to +20dB gain.</p>
+          </div>
+          <div class="slider-control-group">
+            <div class="slider-header">
+              <span class="slider-label">Low-End Warmth</span>
+              <span id="opt-bass-value" class="slider-value-display bass-val">0 dB</span>
+            </div>
+            <input type="range" id="opt-bass-slider" min="0" max="20" step="1" value="0" class="custom-range-slider range-purple" aria-label="Bass Booster" />
+          </div>
+        </div>
+
+        <!-- Noise Remover & Anti-Distortion Clarifier Row -->
+        <div class="setting-row">
+          <div class="setting-info">
+            <h3>🛡️ Noise Remover &amp; Anti-Distortion Clarifier</h3>
+            <p>Applies a 30Hz subsonic anti-rumble filter, 18.5kHz anti-hiss filter, and soft-knee dynamic compressor to eliminate audio clipping and distortion while boosting volume.</p>
+          </div>
+          <label class="toggle-switch" for="opt-noise-remover-toggle" title="Toggle Noise Remover & Clarifier">
+            <input type="checkbox" id="opt-noise-remover-toggle" checked role="switch" aria-checked="true" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <!-- 10-Band Graphic Audio Equalizer Section -->
+        <div class="setting-row eq-setting-container" id="opt-eq-section">
+          <div class="eq-header-row">
+            <div class="setting-info">
+              <h3 class="eq-title">
+                <span class="eq-icon">🎚️</span>
+                <span>10-Band Graphic Equalizer</span>
+              </h3>
+              <p>Fine-tune audio response across 10 precision frequency bands (-12dB to +12dB) with studio preset profiles.</p>
+            </div>
+            <label class="toggle-switch" for="opt-eq-toggle" title="Enable / Disable Equalizer">
+              <input type="checkbox" id="opt-eq-toggle" checked role="switch" aria-checked="true" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="opt-eq-toolbar">
+            <div class="preset-selector-group">
+              <label for="opt-eq-preset" class="preset-label">EQ Preset Profile:</label>
+              <select id="opt-eq-preset" class="num-input eq-select">
+                <option value="Flat">Flat</option>
+                <option value="Bass Boost">Bass Boost</option>
+                <option value="Vocal Booster">Vocal Booster</option>
+                <option value="Treble Boost">Treble Boost</option>
+                <option value="Rock">Rock</option>
+                <option value="Pop">Pop</option>
+                <option value="Acoustic">Acoustic</option>
+                <option value="Electronic">Electronic</option>
+                <option value="Custom">Custom</option>
+              </select>
+            </div>
+            <button id="opt-eq-reset" class="filter-pill pill-reset">↺ Reset to Flat</button>
+          </div>
+
+          <div class="opt-eq-rack" id="opt-eq-rack">
+            <!-- 10 Precision Frequency Sliders -->
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-0" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-0" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="32Hz Gain" />
+              <span class="opt-eq-freq">32 Hz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-1" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-1" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="64Hz Gain" />
+              <span class="opt-eq-freq">64 Hz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-2" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-2" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="125Hz Gain" />
+              <span class="opt-eq-freq">125 Hz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-3" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-3" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="250Hz Gain" />
+              <span class="opt-eq-freq">250 Hz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-4" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-4" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="500Hz Gain" />
+              <span class="opt-eq-freq">500 Hz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-5" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-5" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="1kHz Gain" />
+              <span class="opt-eq-freq">1 kHz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-6" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-6" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="2kHz Gain" />
+              <span class="opt-eq-freq">2 kHz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-7" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-7" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="4kHz Gain" />
+              <span class="opt-eq-freq">4 kHz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-8" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-8" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="8kHz Gain" />
+              <span class="opt-eq-freq">8 kHz</span>
+            </div>
+            <div class="opt-eq-col">
+              <span id="opt-eq-val-9" class="opt-eq-val">0 dB</span>
+              <input type="range" id="opt-eq-slider-9" class="opt-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="16kHz Gain" />
+              <span class="opt-eq-freq">16 kHz</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Time Manager Tab -->
+    <section id="timemanager-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-timemanager">
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Daily Watch Budget Limit</h2>
+            <p class="subtitle">Set a daily entertainment watch budget. YouTube Shield will pause playback and restrict access when your budget is exhausted.</p>
+          </div>
+          <span class="card-chip chip-amber">Budget Guard</span>
+        </div>
+        
+        <label class="setting-row" for="opt-tm-enabled">
+          <div class="setting-info">
+            <h3>Enable Time Manager Guard</h3>
+            <p>Enforce daily maximum watch limits and scheduled focus hours window.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-tm-enabled" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <h3 id="lbl-daily-limit">Daily Watch Limit (Minutes)</h3>
+            <p>Maximum allowed non-study watch time per day (e.g. 60 minutes). Values between 5 and 720 minutes.</p>
+          </div>
+          <input type="number" id="opt-tm-dailyLimitMinutes" min="5" max="720" value="60" class="num-input" aria-labelledby="lbl-daily-limit">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Focus Hours Schedule</h2>
+            <p class="subtitle">Restrict YouTube access during specific productive hours of the day (e.g. work or study blocks).</p>
+          </div>
+          <span class="card-chip chip-indigo">Schedule Window</span>
+        </div>
+
+        <label class="setting-row" for="opt-tm-scheduleEnabled">
+          <div class="setting-info">
+            <h3>Enable Schedule Restriction Window</h3>
+            <p>Automatically block entertainment videos during your configured focus hours window.</p>
+          </div>
+          <div class="toggle-switch">
+            <input type="checkbox" id="opt-tm-scheduleEnabled" role="switch" aria-checked="false">
+            <span class="slider"></span>
+          </div>
+        </label>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <h3>Start Time</h3>
+            <p>When focus hours restriction begins (24-hour HH:MM format).</p>
+          </div>
+          <input type="time" id="opt-tm-scheduleStart" class="num-input time-input" value="09:00">
+        </div>
+
+        <div class="setting-row">
+          <div class="setting-info">
+            <h3>End Time</h3>
+            <p>When focus hours restriction concludes (24-hour HH:MM format).</p>
+          </div>
+          <input type="time" id="opt-tm-scheduleEnd" class="num-input time-input" value="17:00">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. UI Cleaner Tab -->
+    <section id="ui-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-ui">
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Clean Interface Switches</h2>
+            <p class="subtitle">Toggle individual YouTube interface components to declutter the viewing canvas and remove algorithmic triggers.</p>
+          </div>
+          <span class="card-chip chip-emerald">7 Granular Switches</span>
+        </div>
+        
+        <label class="setting-row" for="ui-hideBell">
+          <div class="setting-info">
+            <span class="setting-label">Hide Notification Bell</span>
+            <p>Remove notification counter badges and bell icon from YouTube header.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideBell" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+        
+        <label class="setting-row" for="ui-hideSubCount">
+          <div class="setting-info">
+            <span class="setting-label">Hide Subscriptions Count</span>
+            <p>Hide subscriber numbers on video watch pages and channel headers.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideSubCount" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+        
+        <label class="setting-row" for="ui-hideChat">
+          <div class="setting-info">
+            <span class="setting-label">Hide Live Chat</span>
+            <p>Collapse and disable live stream chat sidebars completely.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideChat" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+        
+        <label class="setting-row" for="ui-hideTrending">
+          <div class="setting-info">
+            <span class="setting-label">Hide Trending Tab</span>
+            <p>Remove Trending & Viral explore links from the left navigation drawer.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideTrending" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+
+        <label class="setting-row" for="ui-hideExplore">
+          <div class="setting-info">
+            <span class="setting-label">Hide Explore Tab</span>
+            <p>Strip Explore, Movies, Gaming, and Podcasts sections from YouTube sidebar.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideExplore" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+        
+        <label class="setting-row" for="ui-hideMiniPlayer">
+          <div class="setting-info">
+            <span class="setting-label">Hide Mini Player</span>
+            <p>Prevent videos from continuing in the bottom-right corner when navigating feeds.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideMiniPlayer" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+
+        <label class="setting-row" for="ui-hideAutoplay">
+          <div class="setting-info">
+            <span class="setting-label">Hide Autoplay Toggle</span>
+            <p>Disable next-video autoplay switch on the YouTube video player controls.</p>
+          </div>
+          <div class="toggle-switch"><input type="checkbox" id="ui-hideAutoplay" role="switch" aria-checked="false"><span class="slider"></span></div>
+        </label>
+      </div>
+    </section>
+
+    <!-- 5. Custom Blocklist Tab -->
+    <section id="blocklist-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-blocklist">
+      <!-- Studio Hero Header Card -->
+      <div class="card blocklist-hero-card">
+        <div class="card-header-row">
+          <div>
+            <div class="blocklist-hero-title-group">
+              <span class="blocklist-hero-icon">🛡️</span>
+              <div>
+                <h2>Custom Blocklist Studio</h2>
+                <p class="subtitle">Filter out unwanted channels and topics across your feeds, Shorts, sidebar recommendations, and search results in real time.</p>
+              </div>
+            </div>
+          </div>
+          <span class="card-chip chip-amber">Real-Time Sync</span>
+        </div>
+
+        <!-- Global Search & Bulk Actions Bar -->
+        <div class="blocklist-toolbar">
+          <div class="blocklist-search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="blocklist-search-input" class="num-input blocklist-search-input" placeholder="Live filter blocked channels & keywords...">
+          </div>
+          <div class="blocklist-bulk-actions">
+            <button id="btn-blocklist-export-json" class="filter-pill action-btn export-json-btn" title="Export blocked channels and keywords as JSON">
+              📥 Export JSON
+            </button>
+            <label class="filter-pill action-btn import-json-btn" id="btn-blocklist-import-json" title="Import blocklist from JSON file">
+              📤 Import JSON
+              <input type="file" id="file-blocklist-import-json" accept=".json" class="hidden-file-input">
+            </label>
+            <button id="btn-blocklist-clear-all" class="filter-pill action-btn clear-all-btn" title="Clear all blocked channels and keywords">
+              🗑️ Clear All
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Tag/Chip Management Panels -->
+      <div class="blocklist-grid">
+        <!-- Panel 1: Blocked Channels -->
+        <div class="card blocklist-panel" id="panel-blocked-channels">
+          <div class="card-header-row">
+            <div>
+              <h3>📺 Blocked Channels <span id="blocked-channels-badge" class="panel-count-badge">0</span></h3>
+              <p class="subtitle">Suppress video recommendations and feeds from specific YouTube creators.</p>
+            </div>
+            <button id="btn-clear-channels" class="clear-panel-btn" title="Clear all blocked channels">Clear Channels</button>
+          </div>
+
+          <div class="blocklist-add-row">
+            <input type="text" id="input-add-channel" class="num-input blocklist-add-input" placeholder="Add YouTube channel (e.g. MrBeast, T-Series)...">
+            <button id="btn-add-channel" class="filter-pill active add-chip-btn">＋ Add Channel</button>
+          </div>
+
+          <div id="blocked-channels-cloud" class="chip-cloud" aria-label="Blocked channels list">
+            <!-- Dynamically populated chips -->
+          </div>
+        </div>
+
+        <!-- Panel 2: Blocked Keywords -->
+        <div class="card blocklist-panel" id="panel-blocked-keywords">
+          <div class="card-header-row">
+            <div>
+              <h3>🏷️ Blocked Keywords <span id="blocked-keywords-badge" class="panel-count-badge">0</span></h3>
+              <p class="subtitle">Hide videos with specific titles, tags, or clickbait trigger words.</p>
+            </div>
+            <button id="btn-clear-keywords" class="clear-panel-btn" title="Clear all blocked keywords">Clear Keywords</button>
+          </div>
+
+          <div class="blocklist-add-row">
+            <input type="text" id="input-add-keyword" class="num-input blocklist-add-input" placeholder="Add keyword or topic (e.g. gaming, reaction, prank)...">
+            <button id="btn-add-keyword" class="filter-pill active add-chip-btn">＋ Add Keyword</button>
+          </div>
+
+          <div id="blocked-keywords-cloud" class="chip-cloud" aria-label="Blocked keywords list">
+            <!-- Dynamically populated chips -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Analytics Tab -->
+    <section id="analytics-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-analytics">
+      <!-- Date Selector Control Bar -->
+      <div class="card date-control-bar">
+        <div class="date-control-info">
+          <span class="calendar-icon">📅</span>
+          <div>
+            <div class="filter-caption">TIMELINE DATE FILTER</div>
+            <div id="selected-date-display" class="filter-selected-date">Today (Aug 16, 2026)</div>
+          </div>
+        </div>
+
+        <div class="date-actions-group">
+          <button id="btn-prev-day" class="filter-pill nav-pill">◀ Prev</button>
+          <input type="date" id="analytics-date-picker" class="date-picker-input">
+          <button id="btn-next-day" class="filter-pill nav-pill">Next ▶</button>
+          <button id="btn-today" class="filter-pill active pill-today">Today</button>
+        </div>
+      </div>
+
+      <!-- Selected Date Executive Metrics Cards Grid -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>Daily Focus Performance</h2>
+            <p class="subtitle">Real-time study ratio, continuous watch duration, and automated distraction shielding count.</p>
+          </div>
+          <span id="analytics-selected-badge" class="card-chip chip-indigo">Today</span>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-box focus-stat-box">
+            <div class="stat-meta-label">Focus Score</div>
+            <div id="dash-focus-score" class="focus-score-number">0%</div>
+            <div class="stat-subtext">Learning / Total Ratio</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-meta-label">Total Watch Time</div>
+            <div id="stat-today" class="stat-value">0h 0m</div>
+            <div class="stat-subtext">Continuous playback</div>
+          </div>
+          <div class="stat-box highlight">
+            <div class="stat-meta-label stat-emerald-label">Learning Time</div>
+            <div id="stat-today-learning" class="stat-value stat-emerald-value">0h 0m</div>
+            <div class="stat-subtext">Goal & Study mode</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-meta-label">Sessions Logged</div>
+            <div id="stat-activity-count" class="stat-value stat-blue-value">0</div>
+            <div class="stat-subtext">Deduplicated sessions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-meta-label">Blocked Distractions</div>
+            <div id="stat-blocked-count" class="stat-value stat-red-value">0</div>
+            <div class="stat-subtext">Shorts & Off-topic</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 24-Hour Hourly Activity Breakdown Card -->
+      <div class="card">
+        <div class="chart-header-row">
+          <div>
+            <h2>📊 24-Hour Hourly Activity Breakdown</h2>
+            <p class="subtitle">Distribution of watch time across each hour of the selected date.</p>
+          </div>
+          <div class="chart-legend">
+            <span class="legend-item legend-learning">
+              <span class="legend-dot dot-emerald"></span> Learning (mins)
+            </span>
+            <span class="legend-item legend-other">
+              <span class="legend-dot dot-red"></span> Other Watch (mins)
+            </span>
+          </div>
+        </div>
+        <div id="hourly-chart-container" class="hourly-chart-box">
+          <!-- Dynamically populated 24 hourly pillars -->
+        </div>
+        <div id="hourly-chart-labels" class="hourly-chart-time-labels">
+          <span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>23:00</span>
+        </div>
+      </div>
+
+      <!-- Session Activity Timeline Log Card -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2 class="timeline-title-heading">
+              <span class="train-icon">⏱️</span>
+              <span>Session Activity Timeline</span>
+            </h2>
+            <p class="subtitle">Live chronological feed with intelligent session duration tracking, channel deduplication, and focus mode tags.</p>
+          </div>
+          <span class="card-chip chip-purple">Session Journal</span>
+        </div>
+
+        <div id="timeline-stream-container" class="timeline-stream">
+          <!-- Dynamically populated vertical activity timeline -->
+        </div>
+      </div>
+
+      <!-- Historical Multi-Day Trend Card -->
+      <div class="card visual-analytics-card">
+        <div class="chart-header-row">
+          <div>
+            <h2>📈 Historical Multi-Day Focus Trend</h2>
+            <p class="subtitle">Comparison of learning time vs total viewing time over the selected period.</p>
+          </div>
+          <div class="category-filters" id="chart-period-pills">
+            <button class="filter-pill active" data-period="7">7 Days</button>
+            <button class="filter-pill" data-period="30">30 Days</button>
+          </div>
+        </div>
+
+        <div class="chart-legend-row">
+          <div class="legend-item legend-learning">
+            <span class="legend-square square-emerald"></span> Learning Time
+          </div>
+          <div class="legend-item legend-other">
+            <span class="legend-square square-red"></span> Other Watch Time
+          </div>
+        </div>
+
+        <div id="analytics-chart-container" class="multiday-chart-box">
+          <!-- Dynamically populated by options.js -->
+        </div>
+      </div>
+
+      <!-- Custom Blocklist Card -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>🛡️ Custom Keyword & Channel Blocklist</h2>
+            <p class="subtitle">Enter keywords or channel names to automatically hide off-topic recommendations and search results.</p>
+          </div>
+          <span class="card-chip chip-amber">Keyword Shield</span>
+        </div>
+
+        <div class="blocklist-field-group">
+          <label for="opt-blocked-keywords" class="blocklist-label">Blocked Title Keywords (Comma-Separated)</label>
+          <input type="text" id="opt-blocked-keywords" class="num-input blocklist-input" placeholder="e.g. gaming, vlog, reaction, prank, gossip">
+        </div>
+
+        <div class="blocklist-field-group">
+          <label for="opt-blocked-channels" class="blocklist-label">Blocked Channel Names (Comma-Separated)</label>
+          <input type="text" id="opt-blocked-channels" class="num-input blocklist-input" placeholder="e.g. GamingChannel, VlogMasters, ViralHub">
+        </div>
+      </div>
+
+      <!-- Data Backup & Restore Card -->
+      <div class="card">
+        <div class="card-header-row">
+          <div>
+            <h2>💾 Data Backup & Portability</h2>
+            <p class="subtitle">Export complete focus statistics, daily timelines, unlocked achievement badges, and configuration profiles.</p>
+          </div>
+          <span class="card-chip chip-emerald">Privacy Local</span>
+        </div>
+
+        <div class="backup-actions-row">
+          <button id="btn-export-json" class="filter-pill action-btn export-json-btn">📥 Export JSON Backup</button>
+          <button id="btn-export-csv" class="filter-pill action-btn export-csv-btn">📊 Export CSV Stats</button>
+          <label class="filter-pill action-btn import-json-btn">
+            📤 Import Backup (.json)
+            <input type="file" id="file-import-json" accept=".json" class="hidden-file-input">
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Achievements Tab -->
+    <section id="gamification-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-gamification">
+      <!-- Hero Battle Card Header -->
+      <div class="battle-card-hero">
+        <div class="battle-hero-top">
+          <div class="rank-emblem-glow-ring" id="battle-rank-emblem-container">
+            <span id="battle-rank-icon" class="rank-emblem-icon rank-bronze">🥉</span>
+            <div id="battle-level-badge" class="battle-level-badge">LVL 1</div>
+          </div>
+
+          <div class="battle-hero-info">
+            <div class="battle-subtitle">MASTERY RANK & FOCUS PROGRESSION</div>
+            <h2 id="battle-rank-name" class="battle-rank-title">Bronze Focus</h2>
+            <div id="battle-next-tier-name" class="battle-next-rank-text">Next Rank: Silver Scholar (200 AP needed)</div>
+          </div>
+
+          <div class="battle-ap-card">
+            <span class="ap-card-label">TOTAL AP SCORE</span>
+            <div class="ap-card-value-container">
+              <span class="ap-icon">⚡</span>
+              <span id="battle-ap-score" class="ap-card-value">0 AP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual-Layer Animated EXP Progress Bar -->
+        <div class="battle-xp-wrapper">
+          <div class="battle-xp-labels">
+            <span class="xp-title">FOCUS EXP PROGRESS</span>
+            <span id="battle-xp-text" class="xp-stats">0 / 200 EXP (0%)</span>
+          </div>
+          <div class="battle-xp-track">
+            <div id="battle-xp-fill" class="battle-xp-fill" style="width: 0%;"></div>
+            <div id="battle-xp-glow" class="battle-xp-glow" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning Streaks Quick Stats Card -->
+      <div class="card battle-streaks-card">
+        <div class="card-header-row">
+          <div>
+            <h2>🔥 Learning Streaks</h2>
+            <p class="subtitle">Maintain consecutive daily study sessions to unlock multiplier bonuses and legendary badges.</p>
+          </div>
+          <span class="card-chip chip-amber">Daily Streaks</span>
+        </div>
+        <div class="stats-grid streaks-grid">
+          <div class="stat-box highlight streak-box">
+            <h4>Current Active Streak</h4>
+            <div id="stat-current-streak" class="stat-value streak-value">0 Days</div>
+            <div class="stat-subtext">Continuous days studied</div>
+          </div>
+          <div class="stat-box streak-box">
+            <h4>All-Time Longest Streak</h4>
+            <div id="stat-longest-streak" class="stat-value">0 Days</div>
+            <div class="stat-subtext">Personal best record</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills Bar & Badges Section -->
+      <div class="card battle-badges-section">
+        <div class="battle-badges-header">
+          <div>
+            <h2>Focus Milestones & Achievement Badges</h2>
+            <p class="subtitle">Complete focus milestones, maintain unbroken streaks, and deflect distractions to unlock all 22 badges.</p>
+          </div>
+          <div class="category-filters" id="category-filter-pills">
+            <button class="filter-pill active" data-category="all">All Badges <span class="pill-count">(22)</span></button>
+            <button class="filter-pill" data-category="time">Time Milestones <span class="pill-count">(8)</span></button>
+            <button class="filter-pill" data-category="streak">Streaks <span class="pill-count">(7)</span></button>
+            <button class="filter-pill" data-category="shield">Shield Guard <span class="pill-count">(7)</span></button>
+          </div>
+        </div>
+
+        <!-- Dynamic 22-Badge Grid Container -->
+        <div class="badges-grid battle-grid" id="badges-container">
+          <!-- Populated dynamically by options.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. About Tab -->
+    <section id="about-tab" class="tab-content" role="tabpanel" aria-labelledby="tab-about">
+      <div class="card about-hero-card">
+        <div class="about-header-group">
+          <div class="about-logo-icon">⚡</div>
+          <div>
+            <h2>YouTube Shield</h2>
+            <p class="about-version">Version 1.0.0 Pro Edition • Built for Extreme Focus</p>
+          </div>
+        </div>
+        <p class="about-description">
+          YouTube Shield is a privacy-first browser extension engineered to give you absolute control over YouTube. 
+          Deflect addictive shorts, eliminate algorithmic distraction loops, sculpt crystal-clear audio with studio Web Audio DSP, and gamify your learning journeys with real-time AP ranks and 22 unlockable achievement badges.
+        </p>
+
+        <div class="about-features-grid">
+          <div class="about-feature-item">
+            <span class="feat-icon">🛡️</span>
+            <div>
+              <h4>Shorts Shield</h4>
+              <p>Total elimination of Shorts across all YouTube surfaces.</p>
+            </div>
+          </div>
+          <div class="about-feature-item">
+            <span class="feat-icon">🎯</span>
+            <div>
+              <h4>Goal & Focus Modes</h4>
+              <p>Dynamic keyword protection and zero-distraction viewing player.</p>
+            </div>
+          </div>
+          <div class="about-feature-item">
+            <span class="feat-icon">🎛️</span>
+            <div>
+              <h4>Web Audio DSP Engine</h4>
+              <p>600% volume booster, lowshelf bass filter, and 10-band studio EQ.</p>
+            </div>
+          </div>
+          <div class="about-feature-item">
+            <span class="feat-icon">🏆</span>
+            <div>
+              <h4>Rank & Mastery Progression</h4>
+              <p>22 battle badge cards, quadratic EXP curves, and AP leader ranks.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="privacy-banner">
+          <div class="privacy-icon">🔒</div>
+          <div class="privacy-text">
+            <strong>100% Local Privacy Guarantee:</strong> All watch analytics, streak logs, settings, and badges remain strictly on your local device. Zero telemetry, zero analytics tracking, and zero third-party network requests.
+          </div>
+        </div>
+
+        <div class="about-links-row" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+          <a href="https://github.com/Shivaramnnp/shorts-shield" target="_blank" rel="noopener noreferrer" class="filter-pill github-link-pill">
+            🐙 GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/shivaramnnp/" target="_blank" rel="noopener noreferrer" class="filter-pill" style="background: rgba(14, 118, 168, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">
+            💼 LinkedIn
+          </a>
+          <a href="mailto:shivaramnnp@gmail.com" class="filter-pill" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);">
+            ✉️ Report Bug
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Save Indicator Toast Notification -->
+  <div class="save-indicator" id="save-indicator" aria-live="assertive">
+    <span class="save-check">✓</span>
+    <span>Preferences Saved</span>
+  </div>
+
+  <!-- Shared Module Scripts -->
+  <script src="../utils/browser-detection.js"></script>
+  <script src="../utils/design-tokens.js"></script>
+  <script src="../utils/storage.js"></script>
+  <script src="../utils/audio-engine.js"></script>
+  <script src="../utils/gamification-engine.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

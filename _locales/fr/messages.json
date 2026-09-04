@@ -1,0 +1,58 @@
+{
+  "extName": {
+    "message": "YouTube Shield",
+    "description": "The name of the extension"
+  },
+  "extDesc": {
+    "message": "Contrôle total sur YouTube. Bloquez les distractions, optimisez votre concentration et profitez d'un égaliseur audio de studio.",
+    "description": "The description of the extension"
+  },
+  "shortsBlocker": {
+    "message": "Bloqueur de Shorts",
+    "description": "Label for Shorts Blocker toggle"
+  },
+  "studyMode": {
+    "message": "Mode Étude",
+    "description": "Label for Study Mode toggle"
+  },
+  "goalMode": {
+    "message": "Mode Objectif",
+    "description": "Label for Goal Mode toggle"
+  },
+  "cleanUI": {
+    "message": "Interface Épurée",
+    "description": "Label for Clean UI toggle"
+  },
+  "autoSkipAds": {
+    "message": "Passer les Annonces",
+    "description": "Label for Auto Skip Ads toggle"
+  },
+  "timeManager": {
+    "message": "Gestionnaire de Temps",
+    "description": "Label for Time Manager toggle"
+  },
+  "volumeBooster": {
+    "message": "Amplificateur de Volume",
+    "description": "Label for Volume Booster"
+  },
+  "bassBoost": {
+    "message": "Amplification des Basses",
+    "description": "Label for Bass Boost"
+  },
+  "graphicEQ": {
+    "message": "Égaliseur Graphique 10 Bandes",
+    "description": "Label for Graphic Equalizer"
+  },
+  "dashboard": {
+    "message": "Tableau de Bord",
+    "description": "Label for Dashboard button"
+  },
+  "active": {
+    "message": "ACTIF",
+    "description": "Status active"
+  },
+  "paused": {
+    "message": "EN PAUSE",
+    "description": "Status paused"
+  }
+}

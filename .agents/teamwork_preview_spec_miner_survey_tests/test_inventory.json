@@ -1,0 +1,2422 @@
+{
+  "tier1": [
+    {
+      "file": "ad-skipper.test.js",
+      "count": 49,
+      "tests": [
+        {
+          "line": 26,
+          "name": "R1.1: Detects and clicks modern 2023+ skip button (.ytp-ad-skip-button-modern)"
+        },
+        {
+          "line": 48,
+          "name": "R1.2: Detects and clicks button inside modern skip slot (.ytp-ad-skip-button-slot button)"
+        },
+        {
+          "line": 72,
+          "name": "R1.3: Detects and clicks classic linear ad skip button (.ytp-skip-ad-button)"
+        },
+        {
+          "line": 94,
+          "name": "R1.4: Detects and clicks bumper / legacy skip button (.ytp-ad-skip-button)"
+        },
+        {
+          "line": 116,
+          "name": "R1.5: Detects and clicks inner text / content element (.ytp-ad-skip-button-text)"
+        },
+        {
+          "line": 144,
+          "name": "R1.6: Detects and clicks button with aria-label (\"Skip ad\", \"Skip ads\", \"Skip\")"
+        },
+        {
+          "line": 165,
+          "name": "R1.7: Detects and clicks legacy videoAdUi skip button (.videoAdUiSkipButton)"
+        },
+        {
+          "line": 187,
+          "name": "R2.1: Does NOT click button when in countdown mode (preview container / countdown text)"
+        },
+        {
+          "line": 209,
+          "name": "R2.2: Does NOT click button when countdown timer digits are displayed"
+        },
+        {
+          "line": 231,
+          "name": "R2.3: Does NOT click button when hidden via display:none or visibility:hidden or hidden attribute"
+        },
+        {
+          "line": 253,
+          "name": "R2.4: Does NOT click button when disabled (disabled property or aria-disabled)"
+        },
+        {
+          "line": 275,
+          "name": "R2.5: Dispatches real MouseEvent if standard .click() does not bubble or is intercepted"
+        },
+        {
+          "line": 302,
+          "name": "R2.6: Logs \"[GodMode] AdSkipper: ad skipped ⚡\" to console on skip"
+        },
+        {
+          "line": 330,
+          "name": "R2.7: Does NOT click when AdSkipper is disabled"
+        },
+        {
+          "line": 348,
+          "name": "R2.8: SPA Navigation (yt-navigate-finish) triggers re-attachment and skip check"
+        },
+        {
+          "line": 369,
+          "name": "R2.9: Does NOT click during varied countdown strings (\"Skip in 5s\", \"You can skip ad in 5s\", \"Skip ad in 5\", \"0:05\")"
+        },
+        {
+          "line": 412,
+          "name": "R2.10: Unskippable 15s ad without skip button remains idle without clicking"
+        },
+        {
+          "line": 434,
+          "name": "R2.11: Rapid back-to-back skippable ads (Ad 1 then Ad 2) are both skipped"
+        },
+        {
+          "line": 473,
+          "name": "R2.12: Detects and clicks role=\"button\" or custom element in skip slot"
+        },
+        {
+          "line": 499,
+          "name": "R2.13: Does NOT click when countdown phrase is in aria-label or title attributes"
+        },
+        {
+          "line": 531,
+          "name": "R2.14: Deep ancestor aria-hidden/disabled/hidden or candidate display:none prevents click"
+        },
+        {
+          "line": 560,
+          "name": "R2.15: Candidate wrapper countdown aria-label and pure timestamp (0:15 / 5s) rejection"
+        },
+        {
+          "line": 594,
+          "name": "R2.16: Handles non-breaking spaces and dispatches MouseEvents"
+        },
+        {
+          "line": 624,
+          "name": "R3.1: autoSkipAds is true by default in DEFAULT_SETTINGS and storage"
+        },
+        {
+          "line": 632,
+          "name": "R3.2: StorageUtil.updateSetting updates autoSkipAds correctly"
+        },
+        {
+          "line": 644,
+          "name": "R3.3: AdSkipper.enable() and disable() manage lifecycle and log state cleanly"
+        },
+        {
+          "line": 667,
+          "name": "R3.4: Main content script applySettings enables AdSkipper when autoSkipAds is true"
+        },
+        {
+          "line": 694,
+          "name": "R3.5: Master toggle disableAllFeatures disables AdSkipper when extensionEnabled is false"
+        },
+        {
+          "line": 710,
+          "name": "R3.6: HUD HeaderButton updateState synchronizes #ss-toggle-auto-skip-ads and activates shield"
+        },
+        {
+          "line": 759,
+          "name": "Strategy A.1: Does NOT force seek video.currentTime when .ad-showing class is on player"
+        },
+        {
+          "line": 776,
+          "name": "Strategy A.2: Does NOT force seek video.currentTime when .ad-interrupting class is on player"
+        },
+        {
+          "line": 793,
+          "name": "Strategy A.3: Does NOT force seek video.currentTime when ad is playing (non-intrusive mode)"
+        },
+        {
+          "line": 810,
+          "name": "Strategy A.4: Does NOT alter video.currentTime when NO ad is playing"
+        },
+        {
+          "line": 829,
+          "name": "Strategy B.1: _injectPageScript() is a no-op (CSP-compliant — no inline script injection)"
+        },
+        {
+          "line": 844,
+          "name": "Strategy B.2: _attachMessageListener() is a no-op (page script removed, no postMessage coordination)"
+        },
+        {
+          "line": 874,
+          "name": "Strategy C.1: Dismisses anti-adblock enforcement message if dialog appears"
+        },
+        {
+          "line": 898,
+          "name": "Strategy A.5: Preserves video playbackRate and does not force 16x speed"
+        },
+        {
+          "line": 915,
+          "name": "Strategy A.6: Ignores hidden .ytp-ad-module with display: none during main video playback"
+        },
+        {
+          "line": 936,
+          "name": "Strategy B.3: _injectPageScript() does NOT inject a script element (CSP-compliant no-op)"
+        },
+        {
+          "line": 950,
+          "name": "Strategy B.4: _injectPageScript() ignores trustedTypes — no-op regardless of CSP environment"
+        },
+        {
+          "line": 975,
+          "name": "Strategy D.1: Debounces console logging across rapid skip button clicks within 500ms"
+        },
+        {
+          "line": 1010,
+          "name": "Strategy A.7: Live video stream ad with duration Infinity does NOT force seek video.currentTime"
+        },
+        {
+          "line": 1033,
+          "name": "Strategy A.8: Detects active ad when .ytp-ad-module has both hidden and visible children"
+        },
+        {
+          "line": 1063,
+          "name": "Strategy D.2: Rejects ad progress indicator \"Ad 1 of 2 · 0:15\" and colon countdown \"Skip in: 5\""
+        },
+        {
+          "line": 1096,
+          "name": "Strategy D.3: MutationObserver upgrades target from body to #movie_player dynamically"
+        },
+        {
+          "line": 1113,
+          "name": "Interface Contract: AdSkipper.getStatus() returns operational metrics and lifecycle state"
+        },
+        {
+          "line": 1132,
+          "name": "M1 Sequence: Dispatches full native event sequence (pointerdown -> mousedown -> pointerup -> mouseup -> click) with composed: true"
+        },
+        {
+          "line": 1167,
+          "name": "M2 Playback Assurance: Resumes paused video playback via video.play() on ad skip"
+        },
+        {
+          "line": 1194,
+          "name": "M3 Isolation: Dismisses ytd-enforcement-message-view-model without mutating tp-yt-iron-overlay-backdrop"
+        }
+      ]
+    },
+    {
+      "file": "analytics-charts.test.js",
+      "count": 4,
+      "tests": [
+        {
+          "line": 12,
+          "name": "R3.1: Date key generation formats local date as YYYY-MM-DD"
+        },
+        {
+          "line": 22,
+          "name": "R3.2: Analytics data correctly calculates focus score percentage"
+        },
+        {
+          "line": 37,
+          "name": "R3.3: 7-day date window generates 7 continuous date entries"
+        },
+        {
+          "line": 55,
+          "name": "R3.4: 30-day date window generates 30 continuous date entries"
+        }
+      ]
+    },
+    {
+      "file": "ap-exp-engine.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 14,
+          "name": "F1.1: Badge definitions award distinct AP and EXP values"
+        },
+        {
+          "line": 32,
+          "name": "F1.2: calculateTotalAP computes accurate AP sums for unlocked badges"
+        },
+        {
+          "line": 46,
+          "name": "F1.3: calculateTotalEXP computes combined badge EXP and learning time EXP"
+        },
+        {
+          "line": 59,
+          "name": "F1.4: calculateLevelFromEXP and Level formula Math.floor(totalAP/200)+1"
+        },
+        {
+          "line": 80,
+          "name": "F1.5: TimeTracker.checkBadges dynamically unlocks badges on threshold reach"
+        },
+        {
+          "line": 94,
+          "name": "F1.6: Badge award idempotency prevents duplicate AP and duplicate badge IDs"
+        }
+      ]
+    },
+    {
+      "file": "audio-engine.test.js",
+      "count": 28,
+      "tests": [
+        {
+          "line": 14,
+          "name": "R2.1: AudioEngine initializes AudioContext mock on first play call"
+        },
+        {
+          "line": 19,
+          "name": "R2.2: playLevelUp, playBadgeUnlock, playAlarm, playClick execute cleanly without throwing"
+        },
+        {
+          "line": 28,
+          "name": "R2.3: AudioEngine respects enabled flag setting"
+        },
+        {
+          "line": 43,
+          "name": "R2.4: TimeTracker checkBadges calls AudioEngine.playBadgeUnlock and playLevelUp"
+        },
+        {
+          "line": 83,
+          "name": "R2.5: TimeManager showOverlay calls AudioEngine.playAlarm"
+        },
+        {
+          "line": 101,
+          "name": "R2.6: applySettings updates window.AudioEngine.enabled state"
+        },
+        {
+          "line": 115,
+          "name": "R2.7: AudioEngine implements full M1 Interface Contract (initContext, attachToVideo, setVolume, setBass, unlock)"
+        },
+        {
+          "line": 124,
+          "name": "R2.8: AudioEngine.attachToVideo and VolumeBooster integration handles video setup, CORS, and node clamping"
+        },
+        {
+          "line": 205,
+          "name": "R2.9: VolumeBooster synchronizes with AudioEngine attachToVideo, setVolume, and setBass"
+        },
+        {
+          "line": 241,
+          "name": "R2.10: VolumeBooster.setVolume(0) mutes to 0% and AudioEngine.setVolume(6.1) clamps gain to 6.0"
+        },
+        {
+          "line": 264,
+          "name": "R1.1: AudioEngine creates 10 BiquadFilterNodes with correct frequencies and filter types"
+        },
+        {
+          "line": 316,
+          "name": "R1.2: setEqGains clamps gain values within [-12dB, +12dB] boundary"
+        },
+        {
+          "line": 331,
+          "name": "R1.3: setEqPreset switches active preset profile and updates filter nodes"
+        },
+        {
+          "line": 348,
+          "name": "R1.4: setEqBandGain updates single band gain and switches preset to Custom"
+        },
+        {
+          "line": 360,
+          "name": "R1.5: getEqGains returns an immutable copy of the gains array"
+        },
+        {
+          "line": 369,
+          "name": "R1.6: setEqEnabled toggles master EQ bypass without corrupting stored preset state"
+        },
+        {
+          "line": 383,
+          "name": "R1.7: VolumeBooster proxies setEqGains, setEqBandGain, setEqPreset, getEqGains, getEqPreset, resetEq"
+        },
+        {
+          "line": 399,
+          "name": "R1.8: setEqPreset returns false and maintains current preset on invalid preset name (AudioEngine & VolumeBooster)"
+        },
+        {
+          "line": 437,
+          "name": "R2.11: AudioEngine constructs AnalyserNode (fftSize=128, smoothingTimeConstant=0.8) and getFrequencyData returns 64-byte Uint8Array"
+        },
+        {
+          "line": 489,
+          "name": "R2.12: VolumeBooster.getFrequencyData proxies to AudioEngine or returns 64-byte Uint8Array"
+        },
+        {
+          "line": 522,
+          "name": "M4.1: Exhaustive Verification of all 9 EQ Preset Profiles on AudioEngine and VolumeBooster"
+        },
+        {
+          "line": 571,
+          "name": "M4.2: 10-Band Gain Clamping on All Individual Bands (-12dB to +12dB)"
+        },
+        {
+          "line": 600,
+          "name": "M4.3: Multi-Tier Storage Persistence & Sync for 10-Band Equalizer Settings"
+        },
+        {
+          "line": 638,
+          "name": "M4.4: Safari WebKit 6-Event Gesture Unlock on Window and Document"
+        },
+        {
+          "line": 678,
+          "name": "M4.5: Media Element crossOrigin=\"anonymous\" attribute and property configuration"
+        },
+        {
+          "line": 712,
+          "name": "M4.6: WeakMap videoSourceCache node caching prevents DOM duplicate node errors"
+        },
+        {
+          "line": 753,
+          "name": "M4.7: Standalone VolumeBooster Audio Routing and Teardown Lifecycle"
+        },
+        {
+          "line": 814,
+          "name": "M4.8: AudioEngine Disconnect and Teardown Lifecycle"
+        }
+      ]
+    },
+    {
+      "file": "backup-restore.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 12,
+          "name": "R4.1: JSON backup payload exports both settings and tracking objects"
+        },
+        {
+          "line": 32,
+          "name": "R4.2: CSV analytics export produces correctly formatted header and data rows"
+        },
+        {
+          "line": 48,
+          "name": "\\n"
+        },
+        {
+          "line": 54,
+          "name": "R4.3: Import JSON restores settings and tracking back into StorageUtil"
+        },
+        {
+          "line": 89,
+          "name": "R4.4: Invalid JSON import payload throws error during parsing"
+        }
+      ]
+    },
+    {
+      "file": "battle-card-ui.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 13,
+          "name": "F3.1: Options player score card renders Rank icon, Rank title, Total AP, and Progress bar"
+        },
+        {
+          "line": 63,
+          "name": "F3.2: Unlocked vs Locked battle cards reflect earned status and AP badge styling"
+        },
+        {
+          "line": 99,
+          "name": "F3.3: Category filter tab switching filters battle cards by category"
+        },
+        {
+          "line": 146,
+          "name": "F3.4: Popup UI summary card displays watch time, learning time, and focus score"
+        },
+        {
+          "line": 181,
+          "name": "F3.5: Navigation tabs activate active content tab and deactivate others"
+        }
+      ]
+    },
+    {
+      "file": "blocklist.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 14,
+          "name": "R1.1: setBlocklist normalizes keywords and channels to lowercase trimmed arrays"
+        },
+        {
+          "line": 25,
+          "name": "R1.2: filterFeed hides video elements matching blocked keywords in title"
+        },
+        {
+          "line": 55,
+          "name": "R1.3: filterFeed hides video elements matching blocked channels"
+        },
+        {
+          "line": 82,
+          "name": "R1.4: Shorts containers are skipped by FeedController blocklist filtering"
+        },
+        {
+          "line": 108,
+          "name": "R1.5: ObserverUtils observes feed items whenever custom blocklist terms exist even if Study Mode is inactive"
+        }
+      ]
+    },
+    {
+      "file": "browser-detection-safari-audio.test.js",
+      "count": 9,
+      "tests": [
+        {
+          "line": 31,
+          "name": "BD1.1: correctly detects Apple Safari on macOS and flags supportsAudioDSP: false"
+        },
+        {
+          "line": 42,
+          "name": "BD1.2: correctly detects Google Chrome and flags supportsAudioDSP: true"
+        },
+        {
+          "line": 50,
+          "name": "BD1.3: correctly detects Brave without misclassifying as Safari"
+        },
+        {
+          "line": 63,
+          "name": "BD1.4: correctly detects Microsoft Edge without misclassifying as Safari"
+        },
+        {
+          "line": 71,
+          "name": "BD1.5: correctly detects Mozilla Firefox and flags supportsAudioDSP: true"
+        },
+        {
+          "line": 80,
+          "name": "BD2.1: prevents Web Audio DSP node creation and page script injection when running in Safari"
+        },
+        {
+          "line": 121,
+          "name": "BD2.2: allows full Web Audio DSP processing when running in Chrome/Brave/Edge/Firefox"
+        },
+        {
+          "line": 154,
+          "name": "BD3.1: renders disabled audio controls and Safari warning notice in HUD menu when in Safari"
+        },
+        {
+          "line": 217,
+          "name": "BD4.1: preserves saved audio booster settings in storage without erasing them when opened in Safari"
+        }
+      ]
+    },
+    {
+      "file": "custom-blocklist-management.test.js",
+      "count": 16,
+      "tests": [
+        {
+          "line": 353,
+          "name": "T1.1: Options UI sidebar navigation switches to blocklist tab and activates panel"
+        },
+        {
+          "line": 373,
+          "name": "T1.2: Dynamic badge displays total count of blocked channels and keywords on initial load"
+        },
+        {
+          "line": 391,
+          "name": "T1.3: Blocked Channels and Keywords render as interactive chips with text and remove buttons"
+        },
+        {
+          "line": 412,
+          "name": "T1.4: Add Channel via Add button trims input, renders chip, updates badge, and persists to storage"
+        },
+        {
+          "line": 433,
+          "name": "T1.5: Add Channel via Enter key triggers addition and storage sync"
+        },
+        {
+          "line": 448,
+          "name": "T1.6: Add Keyword converts to lowercase, renders chip, and persists to storage"
+        },
+        {
+          "line": 469,
+          "name": "T1.7: Auto-deduplication prevents duplicate channels (case-insensitive) from being added"
+        },
+        {
+          "line": 491,
+          "name": "T1.8: Auto-deduplication prevents duplicate keywords from being added"
+        },
+        {
+          "line": 511,
+          "name": "T1.9: Empty or whitespace-only inputs are ignored and do not alter state"
+        },
+        {
+          "line": 533,
+          "name": "T1.10: Single-click ✕ button removes channel chip, updates storage, and decrements badge"
+        },
+        {
+          "line": 556,
+          "name": "T1.11: Single-click ✕ button removes keyword chip, updates storage, and decrements badge"
+        },
+        {
+          "line": 576,
+          "name": "T1.12: Live search bar filters visible chips in real time across both panels"
+        },
+        {
+          "line": 610,
+          "name": "T1.13: Clear All button empties both chip clouds, clears storage, and resets badge to 0"
+        },
+        {
+          "line": 634,
+          "name": "T1.14: Export JSON generates valid structured payload of current blocklists"
+        },
+        {
+          "line": 652,
+          "name": "T1.15: Import JSON merges new valid items, deduplicates, persists, and updates UI"
+        },
+        {
+          "line": 681,
+          "name": "T1.16: Import JSON handles corrupted or invalid input gracefully without crashing"
+        }
+      ]
+    },
+    {
+      "file": "design-tokens.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 17,
+          "name": "M2.T1: DesignTokens is exported cleanly as CommonJS module and attached to window"
+        },
+        {
+          "line": 24,
+          "name": "M2.T2: Palette tokens include all brand accents, backgrounds, text, and status colors"
+        },
+        {
+          "line": 67,
+          "name": "M2.T3: Gamification rank tier colors are fully specified"
+        },
+        {
+          "line": 86,
+          "name": "M2.T4: Typography tokens define font families, scales, and font weights"
+        },
+        {
+          "line": 108,
+          "name": "M2.T5: Spacing, border radii, and layout bounds tokens are defined"
+        },
+        {
+          "line": 132,
+          "name": "M2.T6: Z-Index hierarchy prevents overlay collisions"
+        },
+        {
+          "line": 145,
+          "name": "M2.T7: CSS Custom Properties generators output valid CSS variable mappings and declarations"
+        }
+      ]
+    },
+    {
+      "file": "focus-minimal-ui.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 16,
+          "name": "F6.1: FocusMode.enable() injects shorts-shield-focus-mode class"
+        },
+        {
+          "line": 30,
+          "name": "F6.2: FocusMode.disable() removes shorts-shield-focus-mode class"
+        },
+        {
+          "line": 43,
+          "name": "F6.3: UICleaner.applySettings() applies all 7 CSS toggle classes correctly"
+        },
+        {
+          "line": 71,
+          "name": "F6.4: UICleaner.updateSetting() dynamically toggles individual UI cleaner classes"
+        },
+        {
+          "line": 91,
+          "name": "F6.5: StorageUtil.updateUICleanerSetting updates storage for UI Cleaner toggles"
+        },
+        {
+          "line": 102,
+          "name": "F6.6: UICleaner safely handles null, undefined, or empty settings objects"
+        }
+      ]
+    },
+    {
+      "file": "ghost-shield-strict-mode.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 20,
+          "name": "GS.1: HeaderButton renders both Shield and Quick Block buttons side-by-side in masthead container"
+        },
+        {
+          "line": 54,
+          "name": "GS.2: Ghost Shield purges blocked channel items with .ss-ghost-purged and display:none"
+        },
+        {
+          "line": 87,
+          "name": "GS.3: Ghost Shield purges blocked keyword items from feed"
+        },
+        {
+          "line": 118,
+          "name": "GS.4: Direct watch page navigation to blocked creator halts video and displays strict overlay"
+        },
+        {
+          "line": 148,
+          "name": "GS.5: Strict overlay contains safe Return to Feed and Blocklist Studio buttons with zero bypass"
+        },
+        {
+          "line": 178,
+          "name": "GS.6: Header popup HUD contains Ghost Shield (Strict Purge) toggle row with storage sync"
+        },
+        {
+          "line": 210,
+          "name": "GS.7: Block button is hidden on home screen (/) and visible on watch pages (/watch)"
+        }
+      ]
+    },
+    {
+      "file": "goal-mode-topic.test.js",
+      "count": 8,
+      "tests": [
+        {
+          "line": 17,
+          "name": "F7.1: GoalMode.extractGoalKeywords preserves technical terms (C++, UI/UX, AI, Go, SQL)"
+        },
+        {
+          "line": 36,
+          "name": "F7.2: StudyMode.injectBanner renders study banner with goal text and timer element"
+        },
+        {
+          "line": 55,
+          "name": "F7.7: GoalMode.checkVideoGoalAlignment blocks song videos when goal is communication"
+        },
+        {
+          "line": 81,
+          "name": "F7.3: GoalMode.showGoalBlockOverlay displays block overlay for off-topic videos"
+        },
+        {
+          "line": 101,
+          "name": "F7.4: StudyMode.showAlignmentWarning displays warning banner for non-matching videos"
+        },
+        {
+          "line": 115,
+          "name": "F7.5: GoalMode.enable and disable manage goal mode state and DOM classes"
+        },
+        {
+          "line": 131,
+          "name": "F7.6: GoalMode.addPlayLock and removePlayLock manage video event listeners"
+        },
+        {
+          "line": 154,
+          "name": "F7.8: GoalMode.showGoalBlockOverlay strictly excludes Allow Once button to prevent bypass"
+        }
+      ]
+    },
+    {
+      "file": "harness-sanity.test.js",
+      "count": 2,
+      "tests": [
+        {
+          "line": 7,
+          "name": "Tier 1: Storage reset initializes clean chrome.storage.local"
+        },
+        {
+          "line": 13,
+          "name": "Tier 1: Mock storage creation saves pre-configured gamification data"
+        }
+      ]
+    },
+    {
+      "file": "hud-redesign.test.js",
+      "count": 17,
+      "tests": [
+        {
+          "line": 52,
+          "name": "M2.1a: Default view displays master toggle, hero goal card, session timer, shorts blocker, focus mode"
+        },
+        {
+          "line": 80,
+          "name": "M2.1b: Secondary controls are inside collapsed accordion sections by default"
+        },
+        {
+          "line": 118,
+          "name": "M2.2a: Focus Features accordion toggles open and closed on header click"
+        },
+        {
+          "line": 140,
+          "name": "M2.2b: Today Stats accordion toggles open and closed on header click"
+        },
+        {
+          "line": 159,
+          "name": "M2.2c: Audio accordion toggles open and closed on header click"
+        },
+        {
+          "line": 178,
+          "name": "M2.2d: Multiple sections expand independently without mutual interference"
+        },
+        {
+          "line": 204,
+          "name": "M2.3a: Clicking minimize button hides HUD body and displays minimized pill badge"
+        },
+        {
+          "line": 223,
+          "name": "M2.3b: Clicking restore button restores HUD body and hides minimized pill badge"
+        },
+        {
+          "line": 242,
+          "name": "M2.3c: Live session timer remains synchronized across full and minimized views"
+        },
+        {
+          "line": 262,
+          "name": "M2.4a: Master toggle updates extensionEnabled in storage and manages child opacity"
+        },
+        {
+          "line": 274,
+          "name": "M2.4b: Feature toggles (shorts, focus, study, goal, time manager) update storage correctly"
+        },
+        {
+          "line": 318,
+          "name": "M2.4c: Volume and Bass sliders update VolumeBooster and persist to storage"
+        },
+        {
+          "line": 345,
+          "name": "M2.4d: 10-Band EQ presets, reset, and individual band sliders function seamlessly"
+        },
+        {
+          "line": 381,
+          "name": "M2.4e: Goal inline editing and saving updates storage"
+        },
+        {
+          "line": 405,
+          "name": "M2.4f: Options icon triggers background tab deduplication or window.open fallback"
+        },
+        {
+          "line": 425,
+          "name": "M2.5a: closePopup removes dialog and cleans up spectrum timer"
+        },
+        {
+          "line": 433,
+          "name": "M2.5b: disable cleanly removes button container and all listeners"
+        }
+      ]
+    },
+    {
+      "file": "m1-challenger-reverify.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 15,
+          "name": "M1.1-CHALLENGE: utils/storage.js loads cleanly without global chrome in isolated non-extension Node process"
+        },
+        {
+          "line": 25,
+          "name": "M1.1-CHALLENGE: StorageUtil fallbacks to memory cache/defaults when chrome is undefined"
+        },
+        {
+          "line": 47,
+          "name": "M1.2-CHALLENGE: AudioEngine safely catches throwing AudioContext constructor during all sound play calls"
+        },
+        {
+          "line": 76,
+          "name": "M1.2-CHALLENGE: AudioEngine safely catches throwing webkitAudioContext constructor"
+        },
+        {
+          "line": 102,
+          "name": "M1.2-CHALLENGE: AudioEngine handles suspended context with failing resume() or createOscillator()"
+        },
+        {
+          "line": 133,
+          "name": "M1.3-REVERIFY: VolumeBooster.setVolume(0) mutes volume to 0%"
+        },
+        {
+          "line": 139,
+          "name": "M1.3-REVERIFY: AudioEngine.setVolume(6.1) clamps multiplier gain to 6.0 (600%)"
+        }
+      ]
+    },
+    {
+      "file": "m1-spa-interception-adversarial-stress.test.js",
+      "count": 12,
+      "tests": [
+        {
+          "line": 85,
+          "name": "Regex matches 100% of required Shorts & Playables edge cases"
+        },
+        {
+          "line": 94,
+          "name": "Regex correctly rejects 100% of non-Shorts false-positive URLs"
+        },
+        {
+          "line": 103,
+          "name": "ShortsBlocker.checkAndRedirectShortsURL executes redirection for all target URLs"
+        },
+        {
+          "line": 131,
+          "name": "Repeated patchHistoryAPI() calls do not stack wrap pushState/replaceState"
+        },
+        {
+          "line": 147,
+          "name": "High-frequency pushState / replaceState (1,000 iterations) executes cleanly"
+        },
+        {
+          "line": 173,
+          "name": "unpatchHistoryAPI() cleanly restores original window.history methods"
+        },
+        {
+          "line": 193,
+          "name": "disable() clears urlCheckInterval timer"
+        },
+        {
+          "line": 202,
+          "name": "disable() sets disabledExplicitly = true and isActive = false"
+        },
+        {
+          "line": 213,
+          "name": "When disabledExplicitly is true, checkAndRedirectShortsURL short-circuits immediately"
+        },
+        {
+          "line": 229,
+          "name": "Repeated enable() and disable() cycles (100 iterations) leave no dangling listeners or intervals"
+        },
+        {
+          "line": 244,
+          "name": "Calling disable() twice sequentially does not throw error"
+        },
+        {
+          "line": 256,
+          "name": "ShortsBlocker constructor executes synchronous redirection at document_start"
+        }
+      ]
+    },
+    {
+      "file": "m3-iteration2-fixes.test.js",
+      "count": 3,
+      "tests": [
+        {
+          "line": 18,
+          "name": "Bug 1: GoalMode.checkVideoGoalAlignment blocks off-topic non-entertainment videos when keywords set"
+        },
+        {
+          "line": 46,
+          "name": "Bug 2: GoalMode.extractGoalKeywords handles non-string inputs defensively"
+        },
+        {
+          "line": 57,
+          "name": "Bug 3: StudyMode clears pending autoDismiss timeout on manual banner dismissal"
+        }
+      ]
+    },
+    {
+      "file": "next-level-features.test.js",
+      "count": 25,
+      "tests": [
+        {
+          "line": 35,
+          "name": "R1.1: FeedController.setBlocklist() parses, trims, and normalizes keywords & channels to lowercase"
+        },
+        {
+          "line": 44,
+          "name": "R1.2: Filters video cards on YouTube Home Feed (ytd-rich-item-renderer) matching blocked terms"
+        },
+        {
+          "line": 97,
+          "name": "R1.3: Filters video cards on YouTube Search Results (ytd-video-renderer) matching blocked terms"
+        },
+        {
+          "line": 139,
+          "name": "R1.4: Filters video cards on Sidebar Recommendations (ytd-compact-video-renderer & ytd-grid-video-renderer)"
+        },
+        {
+          "line": 178,
+          "name": "R1.5: Comma-separated keyword and channel string parsing and storage updating"
+        },
+        {
+          "line": 185,
+          "name": ","
+        },
+        {
+          "line": 186,
+          "name": ","
+        },
+        {
+          "line": 196,
+          "name": "R1.6: FeedController skips Shorts container elements (containing a[href*=\"/shorts/\"])"
+        },
+        {
+          "line": 261,
+          "name": "R2.1: AudioEngine initializes AudioContext on demand"
+        },
+        {
+          "line": 270,
+          "name": "R2.2: AudioEngine.playLevelUp() synthesizes 4-note ascending fanfare"
+        },
+        {
+          "line": 287,
+          "name": "R2.3: AudioEngine.playBadgeUnlock() synthesizes 3-note achievement fanfare"
+        },
+        {
+          "line": 303,
+          "name": "R2.4: AudioEngine.playAlarm() synthesizes 3-note Time Manager warning alarm"
+        },
+        {
+          "line": 320,
+          "name": "R2.5: AudioEngine.playClick() synthesizes UI tactile click"
+        },
+        {
+          "line": 334,
+          "name": "R2.6: Sound toggle setting AudioEngine.enabled suppresses audio when false"
+        },
+        {
+          "line": 408,
+          "name": "R3.1: Visual Analytics chart renders 7 daily bars for past 7 days"
+        },
+        {
+          "line": 427,
+          "name": "R3.2: Visual Analytics chart renders 30 daily bars for past 30 days"
+        },
+        {
+          "line": 443,
+          "name": "R3.3: Visual Analytics chart bar segment heights scale dynamically relative to max watch time"
+        },
+        {
+          "line": 466,
+          "name": "R3.4: Hover tooltips display exact date, formatted learning hours, and total watch hours"
+        },
+        {
+          "line": 485,
+          "name": "R3.5: Period filter pills switch active state and re-render chart from 7 to 30 days"
+        },
+        {
+          "line": 558,
+          "name": "R4.1: JSON export string generation produces valid backup payload"
+        },
+        {
+          "line": 571,
+          "name": "R4.2: CSV export string formatting produces correct headers and daily rows"
+        },
+        {
+          "line": 590,
+          "name": "\\n"
+        },
+        {
+          "line": 596,
+          "name": "R4.3: JSON backup import restores storage settings and tracking data"
+        },
+        {
+          "line": 627,
+          "name": "R4.4: JSON backup import handles invalid JSON file with validation alert"
+        },
+        {
+          "line": 644,
+          "name": "R4.5: StorageUtil deep merges partial imported backup with default settings and tracking"
+        }
+      ]
+    },
+    {
+      "file": "quick-block-button.test.js",
+      "count": 29,
+      "tests": [
+        {
+          "line": 137,
+          "name": "T1.1: Quick Block button injects beside Shield button into #ss-header-btn-container"
+        },
+        {
+          "line": 173,
+          "name": "T1.2: Injects into masthead #buttons when header container is pending"
+        },
+        {
+          "line": 199,
+          "name": "T1.3: Fallback injects into document.body when masthead is absent"
+        },
+        {
+          "line": 215,
+          "name": "T1.4: Button injection is idempotent and does not create duplicate buttons"
+        },
+        {
+          "line": 230,
+          "name": "T1.5: Popover menu opens and renders Obsidian glassmorphic interface on button toggle"
+        },
+        {
+          "line": 254,
+          "name": "T1.6: Ghost Shield (Strict Purge) watch page scan halts playback and renders blocked overlay for blocked channel"
+        },
+        {
+          "line": 276,
+          "name": "T1.7: Ghost Shield watch page scan halts playback for blocked keyword in video title"
+        },
+        {
+          "line": 296,
+          "name": "T1.8: Ghost Shield overlay offers Return to Safe Feed and Blocklist Studio buttons"
+        },
+        {
+          "line": 319,
+          "name": "T1.9: Ghost Shield enforcement does not block content when ghostShield is false"
+        },
+        {
+          "line": 335,
+          "name": "T1.10: Clean channel and non-matching title passes without triggering strict block overlay"
+        },
+        {
+          "line": 354,
+          "name": "T1.11: 600ms Self-Healing Watchdog automatically re-injects button upon DOM eviction"
+        },
+        {
+          "line": 378,
+          "name": "T1.12: MutationObserver watch page listener re-injects button on DOM changes"
+        },
+        {
+          "line": 407,
+          "name": "T1.13: 7 Lifecycle navigation events and visibilitychange trigger injection on watch page"
+        },
+        {
+          "line": 447,
+          "name": "T1.14: Navigating across pages maintains header button and halts retry loop"
+        },
+        {
+          "line": 474,
+          "name": "T1.15: Channel name extraction retrieves and sanitizes channel text from DOM"
+        },
+        {
+          "line": 485,
+          "name": "T1.16: Title keyword tokenizer splits words, strips punctuation, and removes stop words"
+        },
+        {
+          "line": 511,
+          "name": "T1.17: Clicking Quick Block button toggles Obsidian popover menu structure"
+        },
+        {
+          "line": 545,
+          "name": "T1.18: 4-Way viewport collision math clamps horizontally to 16px safety margins"
+        },
+        {
+          "line": 573,
+          "name": "T1.19: 4-Way viewport collision math flips menu vertically when bottom overflows"
+        },
+        {
+          "line": 594,
+          "name": "T1.20: Popover dismisses cleanly on Close button, Escape key, and outside pointerdown"
+        },
+        {
+          "line": 632,
+          "name": "T1.21: 1-Click channel block updates storage, pauses video, syncs FeedController, and shows toast"
+        },
+        {
+          "line": 670,
+          "name": "T1.22: Clicking Keyword Chip adds keyword to storage, syncs FeedController, and spawns toast"
+        },
+        {
+          "line": 702,
+          "name": "T1.23: Custom keyword input handles \"+ Add\" button click and Enter keypress"
+        },
+        {
+          "line": 738,
+          "name": "T1.24: Blocklist Studio shortcut sends openOptionsPage IPC message"
+        },
+        {
+          "line": 766,
+          "name": "T1.25: Toast 5-second countdown timer decrements every second"
+        },
+        {
+          "line": 786,
+          "name": "T1.26: Clicking Undo in toast restores previous storage state, resumes video, and dismisses toast"
+        },
+        {
+          "line": 814,
+          "name": "T1.27: Clicking Go Home in toast immediately redirects and dismisses toast"
+        },
+        {
+          "line": 834,
+          "name": "T1.28: Timer expiration executes redirect to YouTube home"
+        },
+        {
+          "line": 850,
+          "name": "T1.29: Controller disable() cleans up all intervals, timers, DOM nodes, and listeners"
+        }
+      ]
+    },
+    {
+      "file": "rank-tier-system.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 15,
+          "name": "F2.1: Bronze Focus rank assignment for 0 - 199 AP"
+        },
+        {
+          "line": 28,
+          "name": "F2.2: Silver Scholar (200-499 AP) and Gold Mastermind (500-999 AP) rank assignments"
+        },
+        {
+          "line": 46,
+          "name": "F2.3: Diamond Warrior (1000-1999 AP) and Heroic Monk (2000-3499 AP) rank assignments"
+        },
+        {
+          "line": 63,
+          "name": "F2.4: Grandmaster Legend rank assignment for 3500+ AP and max rank handling"
+        },
+        {
+          "line": 77,
+          "name": "F2.5: Tier progress percentage calculation across rank thresholds"
+        },
+        {
+          "line": 95,
+          "name": "F2.6: Automatic rank promotion during TimeTracker badge evaluation"
+        }
+      ]
+    },
+    {
+      "file": "session-tracking-fix.test.js",
+      "count": 9,
+      "tests": [
+        {
+          "line": 25,
+          "name": "M1.1: Continuous 2-minute playback on single video produces exactly 1 timeline entry with 120s duration"
+        },
+        {
+          "line": 66,
+          "name": "M1.2: Video change boundary creates distinct session entries for consecutive videos"
+        },
+        {
+          "line": 124,
+          "name": "M1.3a: Inactivity gap > 120s splits playback into a new session record"
+        },
+        {
+          "line": 172,
+          "name": "M1.3b: Inactivity gap <= 120s continues the existing session record"
+        },
+        {
+          "line": 213,
+          "name": "M1.4a: StorageUtil.cleanChannelName sanitizes duplicated strings and invalid values"
+        },
+        {
+          "line": 234,
+          "name": "M1.4b: TimeTracker DOM channel extraction ignores <tp-yt-paper-tooltip> elements"
+        },
+        {
+          "line": 276,
+          "name": "M1.5: StorageUtil.migrateTimelineLog merges consecutive duplicate records and is idempotent"
+        },
+        {
+          "line": 340,
+          "name": "M1.6: Options Analytics correctly computes \"Sessions Logged\" count from consolidated sessions"
+        },
+        {
+          "line": 416,
+          "name": "M1.7: Study Mode continuous playback preserves isLearning flag and accumulates learning time"
+        }
+      ]
+    },
+    {
+      "file": "shorts-blocker.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 18,
+          "name": "F5.1: ShortsBlocker.enable() adds shorts-shield-block-shorts CSS class"
+        },
+        {
+          "line": 32,
+          "name": "F5.2: ShortsBlocker.disable() removes shorts-shield-block-shorts CSS class"
+        },
+        {
+          "line": 45,
+          "name": "F5.3: ShortsBlocker.observeShortsElements hides container elements with display:none"
+        },
+        {
+          "line": 78,
+          "name": "F5.4: ShortsBlocker debug panel creates debug UI and updates text stats"
+        },
+        {
+          "line": 98,
+          "name": "F5.5: HeaderButton.tryInject() injects Shield button into YouTube masthead container"
+        },
+        {
+          "line": 127,
+          "name": "F5.6: HeaderButton.removeButton() removes injected Shield button from DOM"
+        },
+        {
+          "line": 142,
+          "name": "F5.7: Safari SPA URL interception & history.pushState monkey-patching redirects /shorts/ and /playables/ URLs"
+        }
+      ]
+    },
+    {
+      "file": "storage-persistence.test.js",
+      "count": 8,
+      "tests": [
+        {
+          "line": 13,
+          "name": "F4.1: getSettings initializes default settings schema when sync storage is empty"
+        },
+        {
+          "line": 32,
+          "name": "F4.2: getTracking initializes default tracking and gamification schema when local storage is empty"
+        },
+        {
+          "line": 49,
+          "name": "F4.3: saveSettings and updateSetting persist changes atomically to chrome.storage.sync"
+        },
+        {
+          "line": 65,
+          "name": "F4.4: updateTimeManagerSetting and updateUICleanerSetting mutate nested settings correctly"
+        },
+        {
+          "line": 79,
+          "name": "F4.5: saveTracking persists tracking and gamification state to chrome.storage.local"
+        },
+        {
+          "line": 98,
+          "name": "F4.6: getTracking performs deep merge fallback when stored tracking contains missing fields"
+        },
+        {
+          "line": 122,
+          "name": "F4.7: updateVolumeBoosterSetting persists eqEnabled, preset, and eqGains with deep-cloning"
+        },
+        {
+          "line": 141,
+          "name": "F4.8: buildMergedSettings populates default volumeBooster schema when missing"
+        }
+      ]
+    },
+    {
+      "file": "time-manager-snooze.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 17,
+          "name": "F8.1: TimeTracker.incrementWatchTime accumulates daily watch time and learning time"
+        },
+        {
+          "line": 38,
+          "name": "F8.2: TimeManager.evaluate triggers limit overlay when daily limit is exceeded"
+        },
+        {
+          "line": 62,
+          "name": "F8.3: TimeManager.isScheduleBlocked evaluates daytime schedule bounds (09:00 to 17:00)"
+        },
+        {
+          "line": 100,
+          "name": "F8.4: TimeManager.isScheduleBlocked evaluates overnight schedule bounds (22:00 to 06:00)"
+        },
+        {
+          "line": 115,
+          "name": "F8.5: Emergency snooze button (+5 min extension) updates snoozeUntil timestamp"
+        },
+        {
+          "line": 138,
+          "name": "F8.6: Active snooze suppresses TimeManager limit evaluation overlay"
+        }
+      ]
+    },
+    {
+      "file": "timeline-analytics.test.js",
+      "count": 4,
+      "tests": [
+        {
+          "line": 11,
+          "name": "Timeline R1: should initialize DEFAULT_TRACKING with hourly metrics and timelineLog array"
+        },
+        {
+          "line": 19,
+          "name": "Timeline R2: should log timeline events via StorageUtil.addTimelineEvent"
+        },
+        {
+          "line": 41,
+          "name": "Timeline R3: should consolidate duplicate consecutive events within 30 seconds"
+        },
+        {
+          "line": 61,
+          "name": "Timeline R4: should log blocked video attempts when Goal Mode blocks an off-topic video"
+        }
+      ]
+    }
+  ],
+  "tier2": [
+    {
+      "file": "ap-exp-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 11,
+          "name": "AP Engine: Exact boundary AP threshold rank mappings (0, 199, 200, 499, 500, 999, 1000, 1999, 2000, 3499, 3500)"
+        },
+        {
+          "line": 69,
+          "name": "AP Engine: Negative, invalid, and corrupted AP values handling"
+        },
+        {
+          "line": 87,
+          "name": "EXP Engine: Zero EXP handling and minimum Level 1 base"
+        },
+        {
+          "line": 99,
+          "name": "EXP Engine: Level progress calculation with badge and learning time EXP"
+        },
+        {
+          "line": 109,
+          "name": "AP & EXP Engine: Unlocked badge array edge cases (empty array, null, invalid IDs)"
+        },
+        {
+          "line": 119,
+          "name": "AP & EXP Engine: Accumulation with mixed valid and invalid badges"
+        }
+      ]
+    },
+    {
+      "file": "battle-card-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 11,
+          "name": "Battle Card: Empty badge list rendering handled cleanly without throwing"
+        },
+        {
+          "line": 47,
+          "name": "Battle Card: Missing badge catalog IDs ignored gracefully during calculation and rendering"
+        },
+        {
+          "line": 67,
+          "name": "Battle Card: Category filter switching with zero unlocked badges"
+        },
+        {
+          "line": 80,
+          "name": "Battle Card: Special characters in badge titles, names, and descriptions handled safely"
+        },
+        {
+          "line": 101,
+          "name": "Battle Card: Unlocked vs locked status styling and point award display"
+        },
+        {
+          "line": 123,
+          "name": "Battle Card: Catalog integrity of all 22 badges across 3 categories"
+        }
+      ]
+    },
+    {
+      "file": "boundary-sanity.test.js",
+      "count": 2,
+      "tests": [
+        {
+          "line": 7,
+          "name": "Tier 2: DOM reset clears child elements and attributes cleanly"
+        },
+        {
+          "line": 18,
+          "name": "Tier 2: Storage area gracefully handles null and undefined query keys"
+        }
+      ]
+    },
+    {
+      "file": "challenger-m1-1-session-stress.test.js",
+      "count": 9,
+      "tests": [
+        {
+          "line": 27,
+          "name": "Stress 1: 100 rapid consecutive ticks accumulate to exactly 100s without drift or duplicate records"
+        },
+        {
+          "line": 58,
+          "name": "Stress 2: Ping-pong navigation (Video A -> Video B -> Video A -> Video B) creates 4 distinct session records"
+        },
+        {
+          "line": 139,
+          "name": "Stress 3: Video ID extraction parses watch URLs, shorts URLs, and embed URLs correctly"
+        },
+        {
+          "line": 169,
+          "name": "Stress 4: Tab backgrounding (document.hidden = true) halts active time accumulation"
+        },
+        {
+          "line": 217,
+          "name": "Stress 5: Midnight date rollover cleanly transitions session records and daily accounting"
+        },
+        {
+          "line": 269,
+          "name": "Stress 6: Tab unload flush flushes partial unbatched seconds (<10s) without loss"
+        },
+        {
+          "line": 309,
+          "name": "Stress 7: Inactivity gap threshold of 120s strictly separates continuous vs new sessions"
+        },
+        {
+          "line": 355,
+          "name": "Stress 8: StorageUtil.migrateTimelineLog merges 100 corrupted duplicates and is strictly idempotent"
+        },
+        {
+          "line": 459,
+          "name": "Stress 9: Options Analytics metrics accurately reflect session boundaries and focus scores"
+        }
+      ]
+    },
+    {
+      "file": "challenger-m1-2-stress.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 15,
+          "name": "Challenger M1.2: Document_start direct instantiation & immediate redirection before IPC"
+        },
+        {
+          "line": 38,
+          "name": "Challenger M1.2: YouTube Polymer Navigation Events & History API interception"
+        },
+        {
+          "line": 76,
+          "name": "Challenger M1.2: PushState & ReplaceState Microsecond Interception"
+        },
+        {
+          "line": 104,
+          "name": "Challenger M1.2: Absence of False Positive Redirections on Normal YouTube Navigation"
+        },
+        {
+          "line": 143,
+          "name": "Challenger M1.2: [EDGE CASE FINDING] disable() after constructor timer detachment check"
+        }
+      ]
+    },
+    {
+      "file": "challenger-m2-2-adversarial-empirical.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 58,
+          "name": "1.1 Safari/Firefox missing chrome.storage.sync API across all 12 modules"
+        },
+        {
+          "line": 93,
+          "name": "1.2 chrome.storage.sync quota error fallback to local & memory cache"
+        },
+        {
+          "line": 118,
+          "name": "2.1 Context invalidation handling in StorageUtil and Content Controllers"
+        },
+        {
+          "line": 172,
+          "name": "3.1 Operations on completely empty DOM (null/empty body, missing video, missing YouTube components)"
+        },
+        {
+          "line": 207,
+          "name": "3.2 Malformed DOM elements (video with no src, cards without title/channel)"
+        },
+        {
+          "line": 230,
+          "name": "4.1 500 Rapid concurrent IPC messages to Background Service Worker"
+        },
+        {
+          "line": 270,
+          "name": "4.2 Rapid 100x toggle cycle across all content scripts concurrently"
+        }
+      ]
+    },
+    {
+      "file": "challenger-m2-2-empirical-stress.test.js",
+      "count": 11,
+      "tests": [
+        {
+          "line": 25,
+          "name": "UICleaner: All 7 toggle keys map to correct CSS classes"
+        },
+        {
+          "line": 40,
+          "name": "UICleaner: Rapid 50x toggle stress cycle across all 7 toggles"
+        },
+        {
+          "line": 72,
+          "name": "UICleaner: Defensive handling of invalid settings object or keys"
+        },
+        {
+          "line": 88,
+          "name": "UICleaner: Direct DOM fallback when DOMUtils is not present"
+        },
+        {
+          "line": 108,
+          "name": "FeedController: Technical terms (C++, C#, UI/UX, AI, ML, SQL, Web3) preservation"
+        },
+        {
+          "line": 126,
+          "name": "FeedController: Category expansion for coding, english, upsc, communication"
+        },
+        {
+          "line": 138,
+          "name": "FeedController: Blocklist normalization and filtering edge cases"
+        },
+        {
+          "line": 187,
+          "name": "FeedController: Dynamic injection of 200 video cards while observing"
+        },
+        {
+          "line": 240,
+          "name": "FeedController: Search Page (/results) preserves search results during Study Mode"
+        },
+        {
+          "line": 270,
+          "name": "FeedController: Defensive guards against malformed cards or Shorts cards"
+        },
+        {
+          "line": 307,
+          "name": "CSS Audit: ${relPath} file integrity, syntax, and rule coverage"
+        }
+      ]
+    },
+    {
+      "file": "challenger-m2-3-empirical-stress.test.js",
+      "count": 3,
+      "tests": [
+        {
+          "line": 11,
+          "name": "Verify memorySettingsCache retention when chrome.storage.sync & local return {} or throw"
+        },
+        {
+          "line": 53,
+          "name": "Verify memoryTrackingCache retention when chrome.storage.local returns {} or throws"
+        },
+        {
+          "line": 87,
+          "name": "Verify behavior on completely null/undefined chrome.storage API or context invalidation"
+        }
+      ]
+    },
+    {
+      "file": "cross-browser-boundary-stress.test.js",
+      "count": 14,
+      "tests": [
+        {
+          "line": 18,
+          "name": "1.1 Safari missing chrome.storage.sync (undefined sync API)"
+        },
+        {
+          "line": 41,
+          "name": "1.2 chrome.storage.sync.get throwing / rejecting error"
+        },
+        {
+          "line": 64,
+          "name": "1.3 chrome.storage.sync.set throwing QUOTA_BYTES_PER_ITEM error"
+        },
+        {
+          "line": 87,
+          "name": "1.4 Catastrophic storage failure (invalidation & exception fallback to memory cache)"
+        },
+        {
+          "line": 114,
+          "name": "2.1 webNavigation.onBeforeNavigate redirects Shorts URL to home"
+        },
+        {
+          "line": 147,
+          "name": "2.2 webNavigation.onHistoryStateUpdated SPA nav with chrome.scripting"
+        },
+        {
+          "line": 179,
+          "name": "2.3 webNavigation.onHistoryStateUpdated fallback when chrome.scripting is undefined (Firefox MV2)"
+        },
+        {
+          "line": 216,
+          "name": "2.4 Content script ShortsBlocker URL check fallback when webNavigation API fails"
+        },
+        {
+          "line": 258,
+          "name": "3.1 ObserverUtils removes parent container: ${selector}"
+        },
+        {
+          "line": 297,
+          "name": "3.2 Fallback to hiding element directly when no container matches"
+        },
+        {
+          "line": 334,
+          "name": "4.1 openOptionsPage reuses existing options tab"
+        },
+        {
+          "line": 393,
+          "name": "4.2 openOptionsPage creates new tab when no existing tab is found"
+        },
+        {
+          "line": 433,
+          "name": "4.3 openOptionsPage handles query error / lastError gracefully"
+        },
+        {
+          "line": 474,
+          "name": "4.4 Content script HeaderButton falls back to window.open if IPC fails"
+        }
+      ]
+    },
+    {
+      "file": "custom-blocklist-boundary.test.js",
+      "count": 10,
+      "tests": [
+        {
+          "line": 25,
+          "name": "T2.1: Extreme whitespace variations (tabs, newlines, zero-width spaces) are sanitized or rejected"
+        },
+        {
+          "line": 42,
+          "name": "T2.2: Extreme string lengths (1000+ chars) are handled without crash or memory fault"
+        },
+        {
+          "line": 55,
+          "name": "T2.3: Scale Stress: 1,000 unique channels and 1,000 unique keywords storage and badge calculation"
+        },
+        {
+          "line": 76,
+          "name": "T2.4: Scale Stress: Search filtering across 1,000 items executes rapidly without hanging"
+        },
+        {
+          "line": 91,
+          "name": "T2.5: XSS & HTML Injection Payloads in Channel Names are escaped safely in DOM"
+        },
+        {
+          "line": 128,
+          "name": "T2.6: Unicode & Non-Latin Scripts (CJK, Cyrillic, Hindi, Arabic) are preserved accurately"
+        },
+        {
+          "line": 152,
+          "name": "T2.7: Unicode and Emoji Channel & Keyword matching in FeedController"
+        },
+        {
+          "line": 186,
+          "name": "T2.8: Regex Metacharacter Safety: Keywords with C++, C#, Node.js, dots, and brackets do not break regex"
+        },
+        {
+          "line": 228,
+          "name": "T2.9: Timer Expiration Boundary: Undo at 4900ms succeeds vs 5100ms timer expiration"
+        },
+        {
+          "line": 263,
+          "name": "T2.10: Case sensitivity edge case: Uppercase, lowercase, and mixed case matching across blocklist"
+        }
+      ]
+    },
+    {
+      "file": "focus-minimal-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 12,
+          "name": "Focus Mode: Rapid toggle flipping (enable/disable 50x in loop)"
+        },
+        {
+          "line": 27,
+          "name": "UI Cleaner: All 7 UI cleaner toggles active simultaneously"
+        },
+        {
+          "line": 53,
+          "name": "UI Cleaner: All 7 UI cleaner toggles deactivated simultaneously"
+        },
+        {
+          "line": 79,
+          "name": "Focus Reminder Interval Boundary: 0-second / negative input clamping"
+        },
+        {
+          "line": 90,
+          "name": "Focus Reminder Interval Boundary: Upper limit clamping (1440 min / 24 hours)"
+        },
+        {
+          "line": 97,
+          "name": "Focus Mode: Null/undefined DOMUtils fallback handling"
+        }
+      ]
+    },
+    {
+      "file": "gamification-boundaries-badges.test.js",
+      "count": 24,
+      "tests": [
+        {
+          "line": 50,
+          "name": "Rank Tier Boundary: AP = 0 (Bronze Focus start)"
+        },
+        {
+          "line": 62,
+          "name": "Rank Tier Boundary: AP = 199 (Bronze Focus upper boundary)"
+        },
+        {
+          "line": 74,
+          "name": "Rank Tier Boundary: AP = 200 (Silver Scholar transition boundary)"
+        },
+        {
+          "line": 86,
+          "name": "Rank Tier Boundary: AP = 499 (Silver Scholar upper boundary)"
+        },
+        {
+          "line": 98,
+          "name": "Rank Tier Boundary: AP = 500 (Gold Mastermind transition boundary)"
+        },
+        {
+          "line": 110,
+          "name": "Rank Tier Boundary: AP = 999 (Gold Mastermind upper boundary)"
+        },
+        {
+          "line": 122,
+          "name": "Rank Tier Boundary: AP = 1000 (Diamond Warrior transition boundary)"
+        },
+        {
+          "line": 134,
+          "name": "Rank Tier Boundary: AP = 1999 (Diamond Warrior upper boundary)"
+        },
+        {
+          "line": 146,
+          "name": "Rank Tier Boundary: AP = 2000 (Heroic Monk transition boundary)"
+        },
+        {
+          "line": 158,
+          "name": "Rank Tier Boundary: AP = 3499 (Heroic Monk upper boundary)"
+        },
+        {
+          "line": 170,
+          "name": "Rank Tier Boundary: AP = 3500 (Grandmaster Legend threshold)"
+        },
+        {
+          "line": 180,
+          "name": "Rank Tier Boundary: AP = 5000 (Grandmaster Legend surplus AP)"
+        },
+        {
+          "line": 191,
+          "name": "Rank Tier Boundary: Negative AP handling"
+        },
+        {
+          "line": 202,
+          "name": "Badge Trigger: Time Category (first_step, focus_rookie, deep_diver, dedicated_scholar, mastermind, study_warrior, focus_legend, grandmaster_scholar)"
+        },
+        {
+          "line": 236,
+          "name": "Badge Trigger: Streak Category (streak_starter, consistency_master, week_warrior, fortnight_master, monthly_monk, sixty_day_sage, centurion_streak)"
+        },
+        {
+          "line": 269,
+          "name": "Badge Trigger: Shield Guard — shorts_defender (10 Shorts blocked)"
+        },
+        {
+          "line": 284,
+          "name": "Badge Trigger: Shield Guard — focus_guardian (300s watch & 80%+ focus)"
+        },
+        {
+          "line": 311,
+          "name": "Badge Trigger: Shield Guard — pure_focus (1800s learn & 100% focus)"
+        },
+        {
+          "line": 338,
+          "name": "Badge Trigger: Shield Guard — time_commander (daily limit adherence)"
+        },
+        {
+          "line": 369,
+          "name": "Badge Trigger: Shield Guard — distraction_slayer (100 Shorts blocked)"
+        },
+        {
+          "line": 384,
+          "name": "Badge Trigger: Shield Guard — iron_will (highFocusStreak >= 7)"
+        },
+        {
+          "line": 399,
+          "name": "Badge Trigger: Shield Guard — shield_master (500 blocked Shorts & 30 day streak)"
+        },
+        {
+          "line": 430,
+          "name": "Migration: Legacy unlocked badges missing from unlockedBadgeDates are backfilled"
+        },
+        {
+          "line": 454,
+          "name": "Full Progression: Unlocking all 22 badges calculates 4100 AP and Grandmaster Legend rank"
+        }
+      ]
+    },
+    {
+      "file": "gamification-exp-stress.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 9,
+          "name": "Gamification stress test: Level threshold boundaries for E(L) = 100L^2 + 100L - 200"
+        },
+        {
+          "line": 90,
+          "name": "Gamification stress test: expProgressPct midpoints and rounding math"
+        },
+        {
+          "line": 104,
+          "name": "Gamification stress test: calculateTotalEXP aggregation (badges + time rate)"
+        },
+        {
+          "line": 130,
+          "name": "Gamification stress test: High level threshold progression sweep (L1 to L50)"
+        },
+        {
+          "line": 146,
+          "name": "Gamification stress test: Edge inputs and negative/float values"
+        }
+      ]
+    },
+    {
+      "file": "goal-mode-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 13,
+          "name": "Goal Mode: Technical keyword extraction for C++, UI/UX, AI, Go, SQL, Web3"
+        },
+        {
+          "line": 27,
+          "name": "Goal Mode: Empty goal prompt or stop-words-only goal handling"
+        },
+        {
+          "line": 37,
+          "name": "Goal Mode: Special regex characters in video titles and goals"
+        },
+        {
+          "line": 47,
+          "name": "Goal Mode: Case-insensitive topic and title matching"
+        },
+        {
+          "line": 61,
+          "name": "Goal Mode: XSS prevention via HTML escaping in block overlay"
+        },
+        {
+          "line": 77,
+          "name": "Goal Mode: Strict Play Lock enforcement when video is off-topic"
+        }
+      ]
+    },
+    {
+      "file": "m1-audio-node-graph-immutability-stress.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 17,
+          "name": "M1-Empirical-1: Calling attachToVideo() 100 times on the SAME video element reuses WeakMap cached sourceNode and never throws InvalidStateError"
+        },
+        {
+          "line": 69,
+          "name": "M1-Empirical-2: Simulated SPA transitions cycling across multiple video elements reuses WeakMap cache without re-creating MediaElementSource"
+        },
+        {
+          "line": 134,
+          "name": "M1-Empirical-3: AudioEngine fallback to _ssMediaSourceNode DOM property when WeakMap cache reference is absent"
+        },
+        {
+          "line": 189,
+          "name": "M1-Empirical-4: VolumeBooster standalone caching reuses WeakMap / DOM property across repeated connect() calls"
+        },
+        {
+          "line": 255,
+          "name": "M1-Empirical-5: AudioEngine.getEqGains() returns a new array copy protected against direct element mutation, push, splice, reverse, and fill"
+        },
+        {
+          "line": 281,
+          "name": "M1-Empirical-6: VolumeBooster.getEqGains() returns a safe copy in both AudioEngine-proxied and standalone modes"
+        },
+        {
+          "line": 311,
+          "name": "M1-Empirical-7: Verification that setEqGains() requires setter method call to modify gains, and validates inputs safely"
+        }
+      ]
+    },
+    {
+      "file": "m1-audio-webkit-stress.test.js",
+      "count": 4,
+      "tests": [
+        {
+          "line": 13,
+          "name": "M1-Stress-1: Gesture unlock triggers context resume across all 6 specified gesture events"
+        },
+        {
+          "line": 71,
+          "name": "M1-Stress-2: Persistent onstatechange listener re-attaches gesture unlock when context transitions back to suspended"
+        },
+        {
+          "line": 139,
+          "name": "M1-Stress-3: WeakMap node caching and DOM property fallback under WebKit mock environments"
+        },
+        {
+          "line": 195,
+          "name": "M1-Stress-4: Fail-safe handling when WebKit throws InvalidStateError or CORS DOMExceptions on createMediaElementSource"
+        }
+      ]
+    },
+    {
+      "file": "m1-gamification-timetracker-stress.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 15,
+          "name": "M1.2-STRESS-1: Duplicate Badge IDs deduplication in AP and EXP calculation"
+        },
+        {
+          "line": 32,
+          "name": "M1.2-STRESS-2: Safe bounds handling for NaN, negative, and invalid EXP/AP/Time inputs"
+        },
+        {
+          "line": 59,
+          "name": "M1.2-STRESS-3: Year/Week ISO boundary transitions and weekly total rollover"
+        },
+        {
+          "line": 91,
+          "name": "M1.2-STRESS-4: Rapid async checkVideoState calls snapshot activeTime cleanly without race condition"
+        },
+        {
+          "line": 124,
+          "name": "M1.2-STRESS-5: Midnight Focus Reminder daily rollover reset"
+        }
+      ]
+    },
+    {
+      "file": "milestone2-performance-optimization.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 17,
+          "name": "VolumeBooster: getFrequencyData declaration is unique and returns valid 64-byte array"
+        },
+        {
+          "line": 27,
+          "name": "GoalMode: _lockedVideoElement constructor property is cleanly pruned"
+        },
+        {
+          "line": 33,
+          "name": "ShortsBlocker: URL check caching skips redundant execution when URL is unchanged"
+        },
+        {
+          "line": 44,
+          "name": "HeaderButton: Live mini-spectrum gates rAF loop when accordion is collapsed or dialog is minimized"
+        },
+        {
+          "line": 94,
+          "name": "PageAdSkipper: Fast path exit when no ad is playing and no ad was active"
+        }
+      ]
+    },
+    {
+      "file": "rank-tier-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 12,
+          "name": "Rank Tier: Transition at 199 AP to 200 AP boundary"
+        },
+        {
+          "line": 28,
+          "name": "Rank Tier: Intermediate tier boundaries (499->500, 999->1000, 1999->2000)"
+        },
+        {
+          "line": 48,
+          "name": "Rank Tier: Grandmaster Legend cap (3500+ AP fixed at 100% progress)"
+        },
+        {
+          "line": 63,
+          "name": "Rank Tier: Progress % calculation at exact 0% and 100% bounds"
+        },
+        {
+          "line": 78,
+          "name": "Rank Tier: Options/Popup progress bar calculation logic for Grandmaster cap"
+        },
+        {
+          "line": 93,
+          "name": "Rank Tier: Automatic rank upgrade in TimeTracker checkBadges on earning AP"
+        }
+      ]
+    },
+    {
+      "file": "shorts-blocker-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 12,
+          "name": "Shorts Blocker: Rapid enable and disable toggling without state drift"
+        },
+        {
+          "line": 27,
+          "name": "Shorts Blocker: Missing YouTube DOM elements handled gracefully without throwing"
+        },
+        {
+          "line": 39,
+          "name": "Shorts Blocker: Dynamically mutated DOM elements and closest container hiding"
+        },
+        {
+          "line": 58,
+          "name": "Shorts Blocker: Direct element fallback when no renderer container matches"
+        },
+        {
+          "line": 75,
+          "name": "Shorts Blocker: High-frequency observer triggers with duplicate elements"
+        },
+        {
+          "line": 100,
+          "name": "Shorts Blocker: Debug panel UI creation and updates"
+        }
+      ]
+    },
+    {
+      "file": "storage-boundary.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 12,
+          "name": "Storage: Empty storage initialization returns deep copy of DEFAULT_TRACKING"
+        },
+        {
+          "line": 21,
+          "name": "Storage: Legacy schema migration when gamification object is completely missing"
+        },
+        {
+          "line": 44,
+          "name": "Storage: Corrupted storage field types auto-repair during read"
+        },
+        {
+          "line": 64,
+          "name": "Storage: 60-day storage data pruning boundary in TimeTracker"
+        },
+        {
+          "line": 110,
+          "name": "Storage: Missing settings keys fall back cleanly via deep merge"
+        },
+        {
+          "line": 127,
+          "name": "Storage: Calendar week and month rollover boundary handling"
+        },
+        {
+          "line": 158,
+          "name": "Storage: Multi-tier storage fallback error handling under quota/permission failure"
+        }
+      ]
+    },
+    {
+      "file": "time-manager-boundary.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 11,
+          "name": "Time Manager: 5-minute minimum daily limit boundary"
+        },
+        {
+          "line": 24,
+          "name": "Time Manager: Zero watch time (0 seconds)"
+        },
+        {
+          "line": 32,
+          "name": "Time Manager: Overnight 22:00-06:00 schedule wrap boundary evaluation"
+        },
+        {
+          "line": 63,
+          "name": "Time Manager: Emergency snooze 5-minute expiration countdown"
+        },
+        {
+          "line": 78,
+          "name": "Time Manager: Invalid/Disabled limits (0 or negative limit)"
+        },
+        {
+          "line": 92,
+          "name": "Time Manager: Pause video on limit exceeded or schedule blocked"
+        }
+      ]
+    }
+  ],
+  "tier3": [
+    {
+      "file": "custom-blocklist-feed-sync.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 66,
+          "name": "T3.1: Live storage update via chrome.storage.onChanged dynamically updates FeedController blocklist"
+        },
+        {
+          "line": 96,
+          "name": "T3.2: Dynamic feed hiding suppresses matching elements across all 4 YouTube card types in mixed feeds"
+        },
+        {
+          "line": 121,
+          "name": "T3.3: Shorts containers are skipped by FeedController blocklist filter (handled by shorts-blocker)"
+        },
+        {
+          "line": 137,
+          "name": "T3.4: Real-time element restoration unhides only items whose blocked criteria are removed"
+        },
+        {
+          "line": 174,
+          "name": "T3.5: Synergistic interaction between Custom Blocklist and Goal Mode filtering"
+        },
+        {
+          "line": 225,
+          "name": "T3.6: Master extension disable toggle clears all off-topic suppression"
+        }
+      ]
+    },
+    {
+      "file": "interaction-sanity.test.js",
+      "count": 1,
+      "tests": [
+        {
+          "line": 7,
+          "name": "Tier 3: Chrome runtime message passing triggers onMessage listeners"
+        }
+      ]
+    },
+    {
+      "file": "options-popup-storage-sync.test.js",
+      "count": 7,
+      "tests": [
+        {
+          "line": 13,
+          "name": "Updating settings in Popup triggers chrome.storage.onChanged and updates Options state"
+        },
+        {
+          "line": 33,
+          "name": "Updating UI Cleaner toggles in Options Dashboard syncs to Popup state"
+        },
+        {
+          "line": 44,
+          "name": "Gamification AP increase in tracking data syncs across Popup and Options score cards"
+        },
+        {
+          "line": 71,
+          "name": "Bidirectional sequential updates between Popup and Options maintain storage integrity"
+        },
+        {
+          "line": 94,
+          "name": "Default settings and tracking fallback schema is consistently served across both UIs"
+        },
+        {
+          "line": 110,
+          "name": "Options page IPC tab deduplication messaging via chrome.runtime.sendMessage"
+        },
+        {
+          "line": 140,
+          "name": "Equalizer gain and preset updates in Popup sync across StorageUtil, AudioEngine, and Options state"
+        }
+      ]
+    },
+    {
+      "file": "safari-audio-bridge.test.js",
+      "count": 12,
+      "tests": [
+        {
+          "line": 20,
+          "name": "Page Audio DSP Engine initializes on window.__SS_PAGE_AUDIO_DSP__ with clean reload"
+        },
+        {
+          "line": 33,
+          "name": "VolumeBooster injects page-audio-dsp script tag and dispatches __SS_AUDIO_UPDATE__ on all controls"
+        },
+        {
+          "line": 75,
+          "name": "Page Audio DSP Engine updates internal nodes and gain values on __SS_AUDIO_UPDATE__"
+        },
+        {
+          "line": 95,
+          "name": "Volume clamping in Page DSP Engine protects bounds [0..600] and sets GainNode multiplier"
+        },
+        {
+          "line": 112,
+          "name": "Bass clamping in Page DSP Engine protects bounds [0..20 dB] and sets BassFilter gain"
+        },
+        {
+          "line": 129,
+          "name": "EQ gains clamping and master bypass in Page DSP Engine"
+        },
+        {
+          "line": 154,
+          "name": "Exhaustive verification of all 9 EQ Preset Profiles in Page DSP Engine"
+        },
+        {
+          "line": 188,
+          "name": "Full Audio DSP Graph wiring in Page Context"
+        },
+        {
+          "line": 277,
+          "name": "Bidirectional State IPC: Page DSP Engine notifies state via CustomEvent and DOM attributes"
+        },
+        {
+          "line": 304,
+          "name": "Multi-gesture WebKit AudioContext unlocking across all 9 events"
+        },
+        {
+          "line": 341,
+          "name": "YouTube SPA navigation (yt-navigate-finish) and stream switches auto-resume audio"
+        },
+        {
+          "line": 374,
+          "name": "WeakMap videoSourceMap prevents duplicate MediaElementSourceNode creation on the same video"
+        }
+      ]
+    },
+    {
+      "file": "streak-rank-interaction.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 22,
+          "name": "Daily streak progression from day 1 to day 2 unlocks streak_starter and retains Bronze Focus"
+        },
+        {
+          "line": 48,
+          "name": "Multi-day streak across 7 days unlocks week_warrior and triggers Silver Scholar promotion"
+        },
+        {
+          "line": 75,
+          "name": "Multi-day streak to 30 days accumulates AP to trigger Gold Mastermind and Diamond Warrior ranks"
+        },
+        {
+          "line": 100,
+          "name": "Breaking streak resets currentStreak but retains unlocked badges, totalAP, and rank tier"
+        },
+        {
+          "line": 128,
+          "name": "Repeated checkBadges calls are idempotent and do not double count AP"
+        }
+      ]
+    },
+    {
+      "file": "study-goal-priority-interaction.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 26,
+          "name": "Study Mode injects top status banner (#ss-study-banner) with zIndex 9999"
+        },
+        {
+          "line": 39,
+          "name": "Study Mode alignment warning overlay (#ss-alignment-warning) has higher zIndex (10000) than banner (9999)"
+        },
+        {
+          "line": 60,
+          "name": "Goal Mode block overlay (#ss-goal-block-overlay) has max zIndex (2147483647) over Study Mode elements"
+        },
+        {
+          "line": 89,
+          "name": "Disabling Goal Mode removes block overlay while preserving active Study Mode banner"
+        },
+        {
+          "line": 109,
+          "name": "On-topic video title validation suppresses warning overlay in Study Mode and block overlay in Goal Mode"
+        }
+      ]
+    },
+    {
+      "file": "time-tracking-ui-cleaner-interaction.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 14,
+          "name": "Active UICleaner CSS classes applied on DOM do not interfere with TimeTracker playback monitoring"
+        },
+        {
+          "line": 44,
+          "name": "Dynamically toggling UICleaner settings during video playback preserves active session time"
+        },
+        {
+          "line": 69,
+          "name": "TimeTracker checkVideoState queries video element correctly when UI Cleaner hides surrounding DOM elements"
+        },
+        {
+          "line": 90,
+          "name": "Study Mode learning time accumulates and unlocks badges while UI Cleaner hides distraction elements"
+        },
+        {
+          "line": 111,
+          "name": "Full UI Cleaner teardown restores clean DOM without affecting recorded time totals"
+        }
+      ]
+    }
+  ],
+  "tier4": [
+    {
+      "file": "e2e-custom-blocklist-quick-block-flow.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 22,
+          "name": "Scenario 1: Watch Page Quick Block -> Auto-Pause -> Redirect -> Options Studio Inspection & Removal Flow"
+        },
+        {
+          "line": 102,
+          "name": "Scenario 2: Keyword Blocking with Live Multi-Tab Feed Suppression"
+        },
+        {
+          "line": 157,
+          "name": "Scenario 3: Bulk JSON Export, Clear All, and Migration Import Lifecycle"
+        },
+        {
+          "line": 199,
+          "name": "Scenario 4: Rapid Watch Page Block -> Immediate Undo -> Playback Recovery"
+        },
+        {
+          "line": 226,
+          "name": "Scenario 5: Complex Multi-Mode Interaction Lifecycle (Blocklist + Goal Mode + UI Cleaner)"
+        }
+      ]
+    },
+    {
+      "file": "e2e-daily-rollover-streak.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 22,
+          "name": "Midnight Rollover: transition to new date initializes daily watch and learning totals"
+        },
+        {
+          "line": 48,
+          "name": "ISO Week Boundary Reset: weeklyTotal and weeklyLearningTotal reset to 0 when week changes"
+        },
+        {
+          "line": 69,
+          "name": "Month Boundary Reset: monthlyTotal and monthlyLearningTotal reset when calendar month changes"
+        },
+        {
+          "line": 89,
+          "name": "60-Day Data Retention Pruning: entries older than 60 days are pruned from dailyWatchTime and dailyLearningTime"
+        },
+        {
+          "line": 114,
+          "name": "Multi-Day Streak Retention & Recovery: consecutive days increment streak; missed day resets streak to 1"
+        }
+      ]
+    },
+    {
+      "file": "e2e-fresh-install-to-grandmaster.test.js",
+      "count": 6,
+      "tests": [
+        {
+          "line": 13,
+          "name": "Stage 1: Fresh Install Baseline initialized with 0 AP Bronze Focus"
+        },
+        {
+          "line": 24,
+          "name": "Stage 2: Learning & 3-day streak unlocks Silver Scholar (>= 200 AP)"
+        },
+        {
+          "line": 43,
+          "name": "Stage 3: 10 Hours learning, 7-day streak, 10 Shorts blocked unlocks Gold Mastermind (>= 500 AP)"
+        },
+        {
+          "line": 62,
+          "name": "Stage 4: 50 Hours learning, 14-day streak, 100 Shorts blocked unlocks Diamond Warrior (>= 1000 AP)"
+        },
+        {
+          "line": 81,
+          "name": "Stage 5: 100 Hours learning & 30-day streak unlocks Heroic Monk (>= 2000 AP)"
+        },
+        {
+          "line": 105,
+          "name": "Stage 6: Ultimate progression to 100-day streak & 900,000s learning unlocks Grandmaster Legend (3500+ AP)"
+        }
+      ]
+    },
+    {
+      "file": "e2e-multi-session-focus-and-shield.test.js",
+      "count": 5,
+      "tests": [
+        {
+          "line": 31,
+          "name": "Concurrent Initialization: All 4 core defensive features enable cleanly without state conflict"
+        },
+        {
+          "line": 53,
+          "name": "Shorts Interception: ShortsBlocker hides short items & increments blocked count during session"
+        },
+        {
+          "line": 72,
+          "name": "Off-topic Video Blocking: GoalMode intercepts off-topic video with full-screen overlay and pauses playback"
+        },
+        {
+          "line": 92,
+          "name": "On-topic Video Session: GoalMode permits playback and TimeTracker accumulates learning time towards badge unlock"
+        },
+        {
+          "line": 114,
+          "name": "Time Manager Daily Limit Enforcement: Reaching limit triggers TimeManager overlay and pauses playback"
+        }
+      ]
+    },
+    {
+      "file": "e2e-sanity.test.js",
+      "count": 1,
+      "tests": [
+        {
+          "line": 7,
+          "name": "Tier 4: E2E User Progression state lifecycle flow"
+        }
+      ]
+    }
+  ]
+}

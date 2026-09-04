@@ -1,0 +1,40 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Builds & Distribution Archives
+dist/
+*.zip
+*.crx
+*.xpi
+*.tar.gz
+
+# Logs & Runtime Artefacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test Coverage
+coverage/
+.nyc_output/
+
+# IDE & Editor Directories
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Local scratch scripts
+scratch/

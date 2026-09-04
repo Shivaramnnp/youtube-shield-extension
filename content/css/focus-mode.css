@@ -1,0 +1,79 @@
+/* Focus Mode CSS - Applied when html/body has 'shorts-shield-focus-mode' class */
+
+/* Hide comments */
+.shorts-shield-focus-mode #comments,
+.shorts-shield-focus-mode ytd-comments,
+body.shorts-shield-focus-mode #comments,
+body.shorts-shield-focus-mode ytd-comments {
+  display: none !important;
+}
+
+/* Hide related videos in sidebar */
+.shorts-shield-focus-mode #related,
+.shorts-shield-focus-mode ytd-watch-next-secondary-results-renderer,
+body.shorts-shield-focus-mode #related,
+body.shorts-shield-focus-mode ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+/* Hide end screens / video walls at the end of a video */
+.shorts-shield-focus-mode .ytp-ce-element,
+.shorts-shield-focus-mode .html5-endscreen,
+.shorts-shield-focus-mode .ytp-videowall-still,
+body.shorts-shield-focus-mode .ytp-ce-element,
+body.shorts-shield-focus-mode .html5-endscreen,
+body.shorts-shield-focus-mode .ytp-videowall-still {
+  display: none !important;
+}
+
+/* FIX #4: Expand the primary player column and remove the reserved sidebar gap.
+   YouTube uses CSS custom properties and flex layout for the watch page.
+   We need to override the internal sidebar width variable AND expand the
+   primary container so the video player genuinely centers on wide screens. */
+.shorts-shield-focus-mode ytd-watch-flexy[flexy],
+body.shorts-shield-focus-mode ytd-watch-flexy[flexy] {
+  --ytd-watch-flexy-sidebar-width: 0px !important;
+}
+
+.shorts-shield-focus-mode ytd-watch-flexy[flexy] #primary.ytd-watch-flexy,
+body.shorts-shield-focus-mode ytd-watch-flexy[flexy] #primary.ytd-watch-flexy {
+  max-width: 1280px !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  padding-right: 0 !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+/* Collapse the columns layout to a single centered column */
+.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #primary.ytd-watch-flexy,
+.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #secondary.ytd-watch-flexy,
+body.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #primary.ytd-watch-flexy,
+body.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #secondary.ytd-watch-flexy {
+  max-width: 1280px !important;
+  width: 100% !important;
+}
+
+.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #secondary.ytd-watch-flexy,
+body.shorts-shield-focus-mode ytd-watch-flexy[flexy][is-two-columns_] #secondary.ytd-watch-flexy {
+  display: none !important;
+}
+
+/* Hide trending, suggested sections on home */
+.shorts-shield-focus-mode ytd-browse[page-subtype="trending"] #contents,
+.shorts-shield-focus-mode ytd-rich-section-renderer,
+body.shorts-shield-focus-mode ytd-browse[page-subtype="trending"] #contents,
+body.shorts-shield-focus-mode ytd-rich-section-renderer {
+  display: none !important;
+}
+
+/* Strict Zero-Bypass Goal Mode Invariant */
+#ss-btn-allow-once,
+.ss-btn-allow-once,
+[id*="allow-once"],
+[id*="allow-video-once"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}

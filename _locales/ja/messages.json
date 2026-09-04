@@ -1,0 +1,58 @@
+{
+  "extName": {
+    "message": "YouTube Shield",
+    "description": "The name of the extension"
+  },
+  "extDesc": {
+    "message": "YouTubeを完全にコントロール。気を散らす要素をブロックし、音声を強化し、集中して学習できます。",
+    "description": "The description of the extension"
+  },
+  "shortsBlocker": {
+    "message": "Shortsブロッカー",
+    "description": "Label for Shorts Blocker toggle"
+  },
+  "studyMode": {
+    "message": "学習モード",
+    "description": "Label for Study Mode toggle"
+  },
+  "goalMode": {
+    "message": "目標モード",
+    "description": "Label for Goal Mode toggle"
+  },
+  "cleanUI": {
+    "message": "クリーンUI",
+    "description": "Label for Clean UI toggle"
+  },
+  "autoSkipAds": {
+    "message": "広告自動スキップ",
+    "description": "Label for Auto Skip Ads toggle"
+  },
+  "timeManager": {
+    "message": "タイムマネージャー",
+    "description": "Label for Time Manager toggle"
+  },
+  "volumeBooster": {
+    "message": "音量ブースター",
+    "description": "Label for Volume Booster"
+  },
+  "bassBoost": {
+    "message": "低音ブースト",
+    "description": "Label for Bass Boost"
+  },
+  "graphicEQ": {
+    "message": "10バンド イコライザー",
+    "description": "Label for Graphic Equalizer"
+  },
+  "dashboard": {
+    "message": "ダッシュボード",
+    "description": "Label for Dashboard button"
+  },
+  "active": {
+    "message": "有効",
+    "description": "Status active"
+  },
+  "paused": {
+    "message": "一時停止",
+    "description": "Status paused"
+  }
+}

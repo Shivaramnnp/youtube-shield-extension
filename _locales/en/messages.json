@@ -1,0 +1,58 @@
+{
+  "extName": {
+    "message": "YouTube Shield",
+    "description": "The name of the extension"
+  },
+  "extDesc": {
+    "message": "Total control over YouTube. Block distractions, master focus, boost audio, and level up your learning.",
+    "description": "The description of the extension"
+  },
+  "shortsBlocker": {
+    "message": "Shorts Blocker",
+    "description": "Label for Shorts Blocker toggle"
+  },
+  "studyMode": {
+    "message": "Study Mode",
+    "description": "Label for Study Mode toggle"
+  },
+  "goalMode": {
+    "message": "Goal Mode",
+    "description": "Label for Goal Mode toggle"
+  },
+  "cleanUI": {
+    "message": "Clean UI",
+    "description": "Label for Clean UI toggle"
+  },
+  "autoSkipAds": {
+    "message": "Auto Skip Ads",
+    "description": "Label for Auto Skip Ads toggle"
+  },
+  "timeManager": {
+    "message": "Time Manager",
+    "description": "Label for Time Manager toggle"
+  },
+  "volumeBooster": {
+    "message": "Volume Booster",
+    "description": "Label for Volume Booster"
+  },
+  "bassBoost": {
+    "message": "Bass Boost",
+    "description": "Label for Bass Boost"
+  },
+  "graphicEQ": {
+    "message": "10-Band Graphic Equalizer",
+    "description": "Label for Graphic Equalizer"
+  },
+  "dashboard": {
+    "message": "Dashboard",
+    "description": "Label for Dashboard button"
+  },
+  "active": {
+    "message": "ACTIVE",
+    "description": "Status active"
+  },
+  "paused": {
+    "message": "PAUSED",
+    "description": "Status paused"
+  }
+}

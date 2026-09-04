@@ -1,0 +1,46 @@
+name: CI Quality Gate & Test Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Run Unit, Boundary & Stress Tests
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Validate Manifest & Declared Assets
+        run: node scripts/validate-manifest.js
+
+      - name: Run Core Test Suite (Tiers 1-4)
+        run: node run-tests.js
+
+      - name: Run Adversarial AdSkipper Suite
+        run: node tests/challenger-ad-skipper-adversarial.js
+
+      - name: Run HUD & Defensive Modals Stress Suite
+        run: node tests/challenger-adversarial-hud-and-modals.js
+
+      - name: Run Background Worker & IPC Stress Suite
+        run: node tests/challenger-m4_1-empirical-stress.js
+
+      - name: Run Audio DSP & EQ Stress Suite
+        run: node tests/challenger-m3-empirical-stress.js
+
+      - name: Verify Distribution Build Packaging
+        run: npm run package

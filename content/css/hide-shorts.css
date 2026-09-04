@@ -1,0 +1,94 @@
+/* Shorts Shield - Strict CSS Blocker */
+/* Uses :has() to target containers accurately and prevent layout flashing/blank gaps */
+
+/* Hide Shorts Guide Entries (Left Sidebar & Mini-Guide) */
+.shorts-shield-block-shorts ytd-guide-entry-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-guide-entry-renderer:has(a[title*="Shorts"]),
+.shorts-shield-block-shorts ytd-mini-guide-entry-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-mini-guide-entry-renderer:has(a[title*="Shorts"]),
+.shorts-shield-block-shorts tp-yt-paper-item:has(a[href*="shorts"]) {
+  display: none !important;
+}
+
+/* Hide Mobile Sidebar/Bottom Nav Shorts */
+.shorts-shield-block-shorts ytd-pivot-bar-item-renderer:has(a[href*="shorts"]) {
+  display: none !important;
+}
+
+/* Hide Shorts Shelves on Home, Search Results, Channel Pages & All Feeds */
+.shorts-shield-block-shorts ytd-reel-shelf-renderer,
+.shorts-shield-block-shorts ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+.shorts-shield-block-shorts ytd-rich-section-renderer:has(ytd-rich-shelf-renderer),
+.shorts-shield-block-shorts ytd-rich-section-renderer:has(ytd-reel-item-renderer),
+.shorts-shield-block-shorts ytd-rich-section-renderer:has(a[href*="/shorts/"]),
+.shorts-shield-block-shorts ytd-rich-shelf-renderer:has(ytd-reel-item-renderer),
+.shorts-shield-block-shorts ytd-rich-shelf-renderer:has(a[href*="/shorts/"]),
+.shorts-shield-block-shorts ytd-rich-shelf-renderer[is-shorts],
+.shorts-shield-block-shorts reel-shelf-view-model,
+.shorts-shield-block-shorts yt-shorts-shelf-view-model,
+.shorts-shield-block-shorts grid-shelf-view-model:has(ytd-reel-item-renderer),
+.shorts-shield-block-shorts grid-shelf-view-model:has(a[href*="/shorts/"]),
+.shorts-shield-block-shorts ytd-horizontal-card-list-renderer:has(ytd-reel-item-renderer),
+.shorts-shield-block-shorts ytd-horizontal-card-list-renderer:has(a[href*="/shorts/"]) {
+  display: none !important;
+}
+
+/* Hide Individual Shorts Videos, Reel Items, Lockups, and Metadata */
+.shorts-shield-block-shorts ytd-reel-item-renderer,
+.shorts-shield-block-shorts ytd-shorts-lockup-view-model,
+.shorts-shield-block-shorts reel-item-view-model,
+.shorts-shield-block-shorts yt-shorts-lockup-view-model,
+.shorts-shield-block-shorts yt-lockup-view-model:has(a[href*="/shorts/"]),
+.shorts-shield-block-shorts ytd-rich-item-renderer:has(ytd-reel-item-renderer),
+.shorts-shield-block-shorts ytd-rich-item-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-grid-video-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-video-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-video-renderer:has(ytd-reel-item-renderer) {
+  display: none !important;
+}
+
+/* Hide Shorts in Watch Next / Related Sidebars */
+.shorts-shield-block-shorts ytd-compact-video-renderer:has(a[href*="shorts"]),
+.shorts-shield-block-shorts ytd-compact-video-renderer:has(ytd-reel-item-renderer) {
+  display: none !important;
+}
+
+/* Hide Shorts Tabs on Channel Pages */
+.shorts-shield-block-shorts yt-tab-shape:has(a[href*="shorts"]),
+.shorts-shield-block-shorts tp-yt-paper-tab:has(a[href*="shorts"]) {
+  display: none !important;
+}
+
+/* Hide Shorts filter chips */
+.shorts-shield-block-shorts yt-chip-cloud-chip-renderer:has(yt-formatted-string[title="Shorts"]),
+.shorts-shield-block-shorts yt-chip-cloud-chip-renderer:has(yt-formatted-string[title*="Shorts"]) {
+  display: none !important;
+}
+
+/* Fallback: match links that start with /shorts/ */
+.shorts-shield-block-shorts a[href^="/shorts/"]:not(#logo):not([class*="brand"]) {
+  display: none !important;
+}
+
+/* Hide YouTube Playables Shelves, Sidebar Entries, Cards, and Links */
+.shorts-shield-block-shorts ytd-rich-section-renderer:has(a[href*="playables"]),
+.shorts-shield-block-shorts ytd-rich-shelf-renderer:has(a[href*="playables"]),
+.shorts-shield-block-shorts ytd-guide-entry-renderer:has(a[href*="playables"]),
+.shorts-shield-block-shorts ytd-mini-guide-entry-renderer:has(a[href*="playables"]),
+.shorts-shield-block-shorts ytd-rich-item-renderer:has(a[href*="playables"]),
+.shorts-shield-block-shorts ytd-game-details-renderer,
+.shorts-shield-block-shorts ytd-playables-shelf-renderer,
+.shorts-shield-block-shorts a[href^="/playables/"] {
+  display: none !important;
+}
+
+/* Hide Full Shorts Player Overlay / Containers */
+.shorts-shield-block-shorts ytd-shorts,
+.shorts-shield-block-shorts #shorts-container,
+.shorts-shield-block-shorts #shorts-player,
+.shorts-shield-block-shorts ytd-reel-video-renderer,
+.shorts-shield-block-shorts ytd-shorts-player-container,
+.shorts-shield-block-shorts ytd-reel-player-overlay-renderer {
+  display: none !important;
+  visibility: hidden !important;
+}

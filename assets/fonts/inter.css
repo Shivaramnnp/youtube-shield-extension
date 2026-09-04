@@ -1,0 +1,11 @@
+/* Inter Font — bundled locally to avoid external CDN requests in extension pages.
+   NEW-7 FIX: Removes dependency on fonts.googleapis.com which may be blocked by
+   Manifest V3 extension CSP and adds network latency on every popup open. */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../assets/fonts/inter.woff2') format('woff2');
+}

@@ -1,0 +1,84 @@
+/* Clean UI CSS - Applied conditionally based on root/body classes */
+
+/* Hide Notification Bell */
+.ss-hide-bell ytd-notification-topbar-button-renderer,
+.ss-hide-bell ytd-notification-topbar-button-shape,
+.ss-hide-bell #notification-button,
+body.ss-hide-bell ytd-notification-topbar-button-renderer,
+body.ss-hide-bell ytd-notification-topbar-button-shape,
+body.ss-hide-bell #notification-button {
+  display: none !important;
+}
+
+/* Hide Subscriptions Count (badges, dots, or notification numbers on sidebar) */
+.ss-hide-sub-count #newness-dot,
+.ss-hide-sub-count yt-icon.ytd-guide-entry-renderer[icon="yt-sys-icons:bullet"],
+.ss-hide-sub-count .badge-style-type-notification,
+.ss-hide-sub-count ytd-guide-entry-renderer #notification-count,
+body.ss-hide-sub-count #newness-dot,
+body.ss-hide-sub-count yt-icon.ytd-guide-entry-renderer[icon="yt-sys-icons:bullet"],
+body.ss-hide-sub-count .badge-style-type-notification,
+body.ss-hide-sub-count ytd-guide-entry-renderer #notification-count {
+  display: none !important;
+}
+
+/* Hide Live Chat */
+.ss-hide-chat ytd-live-chat-frame,
+.ss-hide-chat #chat-container,
+.ss-hide-chat #chat,
+body.ss-hide-chat ytd-live-chat-frame,
+body.ss-hide-chat #chat-container,
+body.ss-hide-chat #chat {
+  display: none !important;
+}
+
+/* Hide Trending/Explore Tabs in Sidebar (with :has() for modern browsers & direct link fallbacks for Firefox < 121) */
+.ss-hide-trending ytd-guide-entry-renderer:has(a[href*="/feed/trending"]),
+.ss-hide-trending ytd-mini-guide-entry-renderer:has(a[href*="/feed/trending"]),
+body.ss-hide-trending ytd-guide-entry-renderer:has(a[href*="/feed/trending"]),
+body.ss-hide-trending ytd-mini-guide-entry-renderer:has(a[href*="/feed/trending"]),
+.ss-hide-trending a[href="/feed/trending"],
+.ss-hide-trending a[href*="/feed/trending"],
+body.ss-hide-trending a[href="/feed/trending"],
+body.ss-hide-trending a[href*="/feed/trending"] {
+  display: none !important;
+}
+
+.ss-hide-explore ytd-guide-entry-renderer:has(a[href*="/feed/explore"]),
+.ss-hide-explore ytd-mini-guide-entry-renderer:has(a[href*="/feed/explore"]),
+body.ss-hide-explore ytd-guide-entry-renderer:has(a[href*="/feed/explore"]),
+body.ss-hide-explore ytd-mini-guide-entry-renderer:has(a[href*="/feed/explore"]),
+.ss-hide-explore a[href="/feed/explore"],
+.ss-hide-explore a[href*="/feed/explore"],
+body.ss-hide-explore a[href="/feed/explore"],
+body.ss-hide-explore a[href*="/feed/explore"] {
+  display: none !important;
+}
+
+/* Hide Mini Player */
+.ss-hide-mini-player button.ytp-miniplayer-button,
+.ss-hide-mini-player .ytp-miniplayer-button,
+body.ss-hide-mini-player button.ytp-miniplayer-button,
+body.ss-hide-mini-player .ytp-miniplayer-button {
+  display: none !important;
+}
+
+/* Hide Autoplay Toggle */
+.ss-hide-autoplay .ytp-autonav-toggle-button-container,
+.ss-hide-autoplay .ytp-autonav-toggle-button,
+body.ss-hide-autoplay .ytp-autonav-toggle-button-container,
+body.ss-hide-autoplay .ytp-autonav-toggle-button {
+  display: none !important;
+}
+
+/* Hide Promotional Banners & Interruption Popups (e.g. "Experiencing interruptions?") */
+ytd-mealbar-promo-renderer,
+.ytd-mealbar-promo-renderer,
+#mealbar-promo-renderer,
+ytd-banner-promo-renderer,
+ytd-statement-banner-renderer {
+  display: none !important;
+}
+
+
+
