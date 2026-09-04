@@ -49,10 +49,7 @@
     "*://*.youtube-nocookie.com/*"
   ],
   "background": {
-    "service_worker": "background/background.js",
-    "scripts": [
-      "background/background.js"
-    ]
+    "service_worker": "background/background.js"
   },
   "icons": {
     "16": "assets/icons/icon16.png",

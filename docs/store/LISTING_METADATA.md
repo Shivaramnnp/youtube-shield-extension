@@ -122,8 +122,8 @@ When submitting to the Chrome Web Store, paste these exact justifications into t
 |---|---|
 | **Developer / Author** | Shivaram |
 | **Developer Support & Bug Report Email** | `shivaramnnp@gmail.com` |
-| **Official Repository** | `https://github.com/Shivaramnnp/shorts-shield` |
+| **Official Repository** | `https://github.com/Shivaramnnp/youtube-shield-extension` |
 | **Developer LinkedIn Profile** | `https://www.linkedin.com/in/shivaramnnp/` |
-| **Privacy Policy URL** | `https://github.com/Shivaramnnp/shorts-shield/blob/main/PRIVACY.md` |
-| **Terms of Service URL** | `https://github.com/Shivaramnnp/shorts-shield/blob/main/TERMS.md` |
+| **Privacy Policy URL** | `https://github.com/Shivaramnnp/youtube-shield-extension/blob/main/PRIVACY.md` |
+| **Terms of Service URL** | `https://github.com/Shivaramnnp/youtube-shield-extension/blob/main/TERMS.md` |
 

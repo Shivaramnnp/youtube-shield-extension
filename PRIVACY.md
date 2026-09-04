@@ -74,5 +74,5 @@ If you have questions, feedback, bug reports, or concerns regarding this Privacy
 
 * **Author:** Shivaram
 * **Bug Reports & Inquiries:** [`shivaramnnp@gmail.com`](mailto:shivaramnnp@gmail.com)
-* **GitHub Repository:** [https://github.com/Shivaramnnp/shorts-shield](https://github.com/Shivaramnnp/shorts-shield)
+* **GitHub Repository:** [https://github.com/Shivaramnnp/youtube-shield-extension](https://github.com/Shivaramnnp/youtube-shield-extension)
 * **LinkedIn Profile:** [https://www.linkedin.com/in/shivaramnnp/](https://www.linkedin.com/in/shivaramnnp/)

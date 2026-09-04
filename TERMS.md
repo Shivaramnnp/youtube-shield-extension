@@ -58,5 +58,5 @@ For inquiries, feedback, or bug reports regarding these Terms, please contact:
 
 * **Author:** Shivaram
 * **Email:** [`shivaramnnp@gmail.com`](mailto:shivaramnnp@gmail.com)
-* **GitHub Repository:** [https://github.com/Shivaramnnp/shorts-shield](https://github.com/Shivaramnnp/shorts-shield)
+* **GitHub Repository:** [https://github.com/Shivaramnnp/youtube-shield-extension](https://github.com/Shivaramnnp/youtube-shield-extension)
 * **LinkedIn:** [https://www.linkedin.com/in/shivaramnnp/](https://www.linkedin.com/in/shivaramnnp/)
