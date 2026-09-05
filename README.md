@@ -1,12 +1,19 @@
 # 🛡️ YouTube Shield — YouTube Focus & Audio Superpower Suite
 
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![Microsoft Edge Add-ons](https://img.shields.io/badge/Microsoft%20Edge-Get%20it%20on%20Edge%20Add--ons-0078D7?logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc)
 [![Cross Browser](https://img.shields.io/badge/Browsers-Chrome%20%7C%20Edge%20%7C%20Brave%20%7C%20Firefox%20%7C%20Safari%20%7C%20Android-blue.svg)](#-multi-platform-installation-guides)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests Passing](https://img.shields.io/badge/Tests-530%2F530%20Passed-brightgreen.svg)](#-test-suite--quality-gate)
 [![Privacy: 100% Local](https://img.shields.io/badge/Privacy-100%25%20Local%20Storage-purple.svg)](#-privacy--local-first-architecture)
 
 **YouTube Shield** is an open-source, privacy-first browser extension that transforms YouTube from an addictive distraction trap into an intentional learning workstation and studio-grade entertainment platform.
+
+### 📥 Install Extension
+
+[<img src="https://img.shields.io/badge/Microsoft%20Edge-Get%20Extension-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="38">](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc)
+[<img src="https://img.shields.io/badge/Firefox%20AMO-Desktop%20%26%20Android-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="38">](https://addons.mozilla.org/)
+[<img src="https://img.shields.io/badge/GitHub-Download%20ZIP-181717?style=for-the-badge&logo=github&logoColor=white" height="38">](https://github.com/Shivaramnnp/youtube-shield-extension/releases)
 
 It combines intelligent Shorts elimination, focus modes, Pomodoro cycles, intentional goal enforcement, studio-quality 10-band audio equalization with live 60 FPS spectrum visualizer, 600% volume boosting, native ad acceleration/skipping, and an RPG gamification ranking system.
 
@@ -85,14 +92,14 @@ Works on **Windows, macOS, Linux, and ChromeOS**.
 #### Step-by-Step Installation:
 1. **Download or Clone the Repository:**
    ```bash
-   git clone https://github.com/Shivaramnnp/shorts-shield.git
+   git clone https://github.com/Shivaramnnp/youtube-shield-extension.git
    ```
    *(Or download and extract the ZIP file to your computer).*
 
 2. **Open Extensions Page:**
+   - **Microsoft Edge (Official Store):** [Install directly from Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc)
    - **Google Chrome:** `chrome://extensions`
    - **Brave Browser:** `brave://extensions`
-   - **Microsoft Edge:** `edge://extensions`
    - **Arc Browser:** `arc://extensions` (or `Cmd+T` → type `extensions`)
    - **Opera / Opera GX:** `opera://extensions`
    - **Vivaldi:** `vivaldi://extensions`
@@ -102,7 +109,7 @@ Works on **Windows, macOS, Linux, and ChromeOS**.
 
 4. **Load the Extension:**
    - Click the **"Load unpacked"** button in the top-left corner.
-   - Select the `shorts-shield` folder (the directory containing `manifest.json`).
+   - Select the `youtube-shield-extension` folder (the directory containing `manifest.json`).
 
 5. **Pin & Access:**
    - Click the puzzle piece icon (🧩) in your browser toolbar and click the **Pin (📌)** icon.

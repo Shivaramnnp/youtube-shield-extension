@@ -123,6 +123,7 @@ When submitting to the Chrome Web Store, paste these exact justifications into t
 | **Developer / Author** | Shivaram |
 | **Developer Support & Bug Report Email** | `shivaramnnp@gmail.com` |
 | **Official Repository** | `https://github.com/Shivaramnnp/youtube-shield-extension` |
+| **Microsoft Edge Add-ons Store URL** | `https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc` |
 | **Developer LinkedIn Profile** | `https://www.linkedin.com/in/shivaramnnp/` |
 | **Privacy Policy URL** | `https://github.com/Shivaramnnp/youtube-shield-extension/blob/main/PRIVACY.md` |
 | **Terms of Service URL** | `https://github.com/Shivaramnnp/youtube-shield-extension/blob/main/TERMS.md` |
