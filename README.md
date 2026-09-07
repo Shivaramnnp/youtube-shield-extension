@@ -2,6 +2,7 @@
 
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-success.svg)](https://developer.chrome.com/docs/extensions/mv3/intro/)
 [![Microsoft Edge Add-ons](https://img.shields.io/badge/Microsoft%20Edge-Get%20it%20on%20Edge%20Add--ons-0078D7?logo=microsoft-edge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc)
+[![Mozilla Firefox AMO](https://img.shields.io/badge/Firefox%20AMO-Get%20it%20on%20Firefox-FF7139?logo=firefox-browser&logoColor=white)](https://addons.mozilla.org/en-US/firefox/addon/youtube-shield/)
 [![Cross Browser](https://img.shields.io/badge/Browsers-Chrome%20%7C%20Edge%20%7C%20Brave%20%7C%20Firefox%20%7C%20Safari%20%7C%20Android-blue.svg)](#-multi-platform-installation-guides)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests Passing](https://img.shields.io/badge/Tests-530%2F530%20Passed-brightgreen.svg)](#-test-suite--quality-gate)
@@ -12,7 +13,7 @@
 ### 📥 Install Extension
 
 [<img src="https://img.shields.io/badge/Microsoft%20Edge-Get%20Extension-0078D7?style=for-the-badge&logo=microsoft-edge&logoColor=white" height="38">](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc)
-[<img src="https://img.shields.io/badge/Firefox%20AMO-Desktop%20%26%20Android-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="38">](https://addons.mozilla.org/)
+[<img src="https://img.shields.io/badge/Firefox%20AMO-Desktop%20%26%20Android-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" height="38">](https://addons.mozilla.org/en-US/firefox/addon/youtube-shield/)
 [<img src="https://img.shields.io/badge/GitHub-Download%20ZIP-181717?style=for-the-badge&logo=github&logoColor=white" height="38">](https://github.com/Shivaramnnp/youtube-shield-extension/releases)
 
 It combines intelligent Shorts elimination, focus modes, Pomodoro cycles, intentional goal enforcement, studio-quality 10-band audio equalization with live 60 FPS spectrum visualizer, 600% volume boosting, native ad acceleration/skipping, and an RPG gamification ranking system.
@@ -117,22 +118,26 @@ Works on **Windows, macOS, Linux, and ChromeOS**.
 
 ---
 
-### 2. 🦊 Mozilla Firefox (Desktop)
+### 2. 🦊 Mozilla Firefox (Desktop & Android)
 
-Works on **Windows, macOS, and Linux**.
+Works on **Windows, macOS, Linux, and Firefox for Android**.
 
-#### Method A: Temporary Installation (Standard Firefox)
+#### 🚀 Official One-Click Installation (Recommended):
+Install directly from the official Mozilla Add-ons Store:
+👉 **[Get YouTube Shield on Firefox Add-ons (AMO)](https://addons.mozilla.org/en-US/firefox/addon/youtube-shield/)**
+
+#### Method B: Manual / Developer Installation
 1. Open Firefox and navigate to `about:debugging` in the address bar.
 2. In the left sidebar, click **"This Firefox"**.
 3. Under the **Temporary Extensions** section, click **"Load Temporary Add-on..."**.
-4. Navigate to the `shorts-shield` folder and select the **`manifest.json`** file.
+4. Navigate to the `youtube-shield-extension` folder and select the **`manifest.json`** file.
 5. Open **[YouTube](https://www.youtube.com/)** to start using the extension.
 
-#### Method B: Permanent Installation (Firefox Developer Edition / Nightly)
+#### Method C: Permanent Installation (Firefox Developer Edition / Nightly)
 1. In Developer Edition or Nightly, navigate to `about:config`.
 2. Search for `xpinstall.signatures.required` and set it to **`false`**.
-3. Zip the contents of the `shorts-shield` folder and rename the file extension to `.xpi` (e.g. `shorts-shield.xpi`).
-4. Drag and drop `shorts-shield.xpi` into any open Firefox window to install permanently.
+3. Zip the contents of the `youtube-shield-extension` folder and rename the file extension to `.xpi` (e.g. `youtube-shield.xpi`).
+4. Drag and drop `youtube-shield.xpi` into any open Firefox window to install permanently.
 
 ---
 
