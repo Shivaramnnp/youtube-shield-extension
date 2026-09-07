@@ -16,7 +16,7 @@ Apple Safari requires converting standard WebExtension projects into a native ma
 Open your macOS **Terminal** and run the following command, pointing to your project folder:
 
 ```bash
-xcrun safari-web-extension-converter /Users/shivarampatel/Desktop/shorts-shield --project-location ~/Desktop/YouTubeShieldSafari --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --macos-only --force
+xcrun safari-web-extension-converter "/Users/shivarampatel/Desktop/youtube shield - extension" --project-location ~/Desktop/YouTubeShieldSafari --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --macos-only --force
 ```
 
 This command automatically converts the WebExtension into a native macOS Safari Extension Xcode project with full Page-Context Web Audio Engine Bridge support.

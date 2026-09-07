@@ -149,7 +149,7 @@ Requires **macOS Ventura, Sonoma, Sequoia or later** and **Xcode** (or Xcode Com
 1. **Convert to Safari Web Extension:**
    Open Terminal and run:
    ```bash
-   xcrun safari-web-extension-converter /path/to/shorts-shield --project-location ~/Desktop/YouTubeShieldSafari --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --macos-only --force
+   xcrun safari-web-extension-converter "/Users/shivarampatel/Desktop/youtube shield - extension" --project-location ~/Desktop/YouTubeShieldSafari --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --macos-only --force
    ```
 
 2. **Open and Build in Xcode:**
@@ -176,9 +176,9 @@ Google Chrome on Android does not natively support extensions, but Chromium-base
 1. **Package Extension:**
    On your computer, create a ZIP file of the repository:
    ```bash
-   zip -r shorts-shield.zip . -x "*.git*" "tests/*" "node_modules/*"
+   zip -r youtube-shield.zip . -x "*.git*" "tests/*" "node_modules/*"
    ```
-   Send `shorts-shield.zip` to your Android device.
+   Send `youtube-shield.zip` to your Android device.
 
 2. **Install Kiwi Browser:**
    - Download and install **Kiwi Browser** from the Google Play Store.
@@ -187,12 +187,12 @@ Google Chrome on Android does not natively support extensions, but Chromium-base
    - Open Kiwi Browser and tap the **three dots menu (`⋮`)** in the top-right corner.
    - Tap **Extensions** (or type `kiwi://extensions` in the address bar).
    - Toggle ON **"Developer mode"** in the top-right corner.
-   - Tap **`+ (from .zip / .crx / .user.js)`** and select `shorts-shield.zip` from your phone's storage.
+   - Tap **`+ (from .zip / .crx / .user.js)`** and select `youtube-shield.zip` from your phone's storage.
 
 4. **Use on YouTube:**
    - Navigate to [youtube.com](https://youtube.com).
    - Tap `⋮` → Check **Desktop site** for the full top masthead HUD menu & Audio Studio rack.
-   - Access the extension popup anytime via Kiwi's `⋮` menu → **Shorts Shield**.
+   - Access the extension popup anytime via Kiwi's `⋮` menu → **YouTube Shield**.
 
 ---
 
@@ -200,7 +200,7 @@ Google Chrome on Android does not natively support extensions, but Chromium-base
 
 1. Run the Safari converter with `--ios-only`:
    ```bash
-   xcrun safari-web-extension-converter /path/to/shorts-shield --project-location ~/Desktop/YouTubeShieldiOS --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --ios-only --force
+   xcrun safari-web-extension-converter "/Users/shivarampatel/Desktop/youtube shield - extension" --project-location ~/Desktop/YouTubeShieldiOS --app-name "YouTube Shield" --bundle-identifier "com.shivaram.youtubeshield" --ios-only --force
    ```
 2. Open the project in Xcode, connect your iPhone or iPad, and deploy using your Apple Developer account or free Personal Team profile.
 3. On your iOS device, go to **Settings** → **Safari** → **Extensions** → enable **YouTube Shield**.

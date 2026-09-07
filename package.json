@@ -19,13 +19,13 @@
     "productivity"
   ],
   "author": "Shivaram <shivaramnnp@gmail.com> (https://github.com/Shivaramnnp/)",
-  "homepage": "https://github.com/Shivaramnnp/shorts-shield",
+  "homepage": "https://github.com/Shivaramnnp/youtube-shield-extension",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shivaramnnp/shorts-shield.git"
+    "url": "https://github.com/Shivaramnnp/youtube-shield-extension.git"
   },
   "bugs": {
-    "url": "https://github.com/Shivaramnnp/shorts-shield/issues",
+    "url": "https://github.com/Shivaramnnp/youtube-shield-extension/issues",
     "email": "shivaramnnp@gmail.com"
   },
   "license": "MIT"

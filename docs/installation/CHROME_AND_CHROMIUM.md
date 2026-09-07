@@ -15,9 +15,9 @@ This guide covers step-by-step installation for all desktop Chromium-based brows
 ### Step 1: Download or Clone the Repository
 Make sure the extension folder is on your local machine:
 ```bash
-git clone https://github.com/Shivaramnnp/shorts-shield.git
+git clone https://github.com/Shivaramnnp/youtube-shield-extension.git
 ```
-*(Or download the ZIP archive and extract it to a folder like `Desktop/shorts-shield`)*.
+*(Or download the ZIP archive and extract it to a folder like `Desktop/youtube-shield-extension`)*.
 
 ---
 
@@ -27,9 +27,9 @@ Open your browser and paste the corresponding URL into the address bar:
 
 | Browser | Address Bar URL | Shortcut / Menu Navigation |
 |---|---|---|
+| **Microsoft Edge (Official Store)** | [Install directly from Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/youtube-shield/ppdioanimggmhgoheogajbjmkededhnc) | One-Click Store Install |
 | **Google Chrome** | `chrome://extensions` | Menu (⋮) → **Extensions** → **Manage Extensions** |
 | **Brave Browser** | `brave://extensions` | Menu (☰) → **Extensions** |
-| **Microsoft Edge** | `edge://extensions` | Menu (…) → **Extensions** → **Manage Extensions** |
 | **Arc Browser** | `arc://extensions` | Command Bar (`Cmd+T` or `Ctrl+T`) → type `extensions` |
 | **Opera / Opera GX**| `opera://extensions` | Menu (O) → **Extensions** → **Extensions** |
 | **Vivaldi** | `vivaldi://extensions` | Tools Menu → **Extensions** |
