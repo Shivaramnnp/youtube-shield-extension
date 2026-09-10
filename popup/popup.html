@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Shield — Focus & Audio</title>
+  <title>Shield for YouTube</title>
   <link rel="stylesheet" href="popup.css">
-  <!-- Bundled Inter font to avoid external network requests and CSP issues -->
   <link rel="stylesheet" href="../assets/fonts/inter.css">
   <link rel="icon" type="image/png" href="../assets/icons/icon32.png">
 </head>
@@ -14,57 +13,101 @@
     <!-- Header -->
     <header class="header">
       <div class="logo">
-        <span class="logo-shield">🛡️</span>
-        <div class="logo-text-group">
-          <span class="logo-text">YouTube Shield</span>
-          <span class="logo-badge">PRO</span>
+        <span class="shield-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </span>
+        <div class="logo-title">
+          <strong>Shield</strong> <span class="logo-sub">for YouTube</span>
         </div>
       </div>
-      <div class="header-right">
-        <label class="master-toggle-wrap" for="toggle-master" title="Enable / Disable YouTube Shield">
-          <input type="checkbox" id="toggle-master" role="switch" aria-label="Enable Extension" />
-          <span class="master-slider"></span>
+      
+      <div class="header-actions">
+        <!-- Master Pill Switch: On / Off -->
+        <label class="pill-toggle" for="toggle-master" title="Master Switch">
+          <input type="checkbox" id="toggle-master" role="switch" checked aria-label="Enable Extension" />
+          <span class="pill-slider">
+            <span class="pill-state-on">On</span>
+            <span class="pill-state-off">Off</span>
+            <span class="pill-thumb"></span>
+          </span>
         </label>
-        <div tabindex="0" class="settings-icon" id="open-settings" title="Open Settings" role="button" aria-label="Open Settings">⚙️</div>
+        
+        <!-- Settings Gear / Open Dashboard -->
+        <button class="icon-btn" id="open-settings" title="Settings & Options" aria-label="Open Settings" type="button">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
       </div>
     </header>
 
-    <!-- Study Hero Card -->
-    <div class="study-card" id="study-card">
-      <div class="study-header">
-        <div class="goal-wrapper">
-          <span class="goal-label">🎯 Goal:</span>
-          <span id="current-goal" class="goal-text">Learn something new</span>
+    <!-- Circular Hero Session Timer -->
+    <section class="hero-session" id="study-card">
+      <div class="timer-ring-wrap">
+        <svg class="timer-ring-svg" viewBox="0 0 140 140" width="140" height="140">
+          <circle class="ring-bg" cx="70" cy="70" r="58" />
+          <circle class="ring-fg" id="timer-ring-progress" cx="70" cy="70" r="58" />
+        </svg>
+        <div class="timer-inner">
+          <div class="session-time" id="session-time" aria-live="polite">00:00:00</div>
+          <div class="session-label">This session</div>
         </div>
-        <span tabindex="0" class="edit-goal" id="edit-goal" title="Edit Goal" role="button" aria-label="Edit Goal">✏️</span>
       </div>
-      <div class="session-time" id="session-time" aria-live="polite">00:00:00</div>
-      <div class="session-label">Session Time</div>
-      
+
+      <!-- Goal Pill Button -->
+      <div class="goal-pill" id="edit-goal" role="button" tabindex="0" title="Click to edit learning goal">
+        <span class="goal-pencil">✏️</span>
+        <span class="goal-prefix">Goal —</span>
+        <span class="goal-text" id="current-goal">Learn something new</span>
+      </div>
+
+      <!-- Inline Goal Edit Box -->
       <div class="goal-input-container" id="goal-input-container" style="display: none;">
         <input type="text" id="goal-input" placeholder="Enter learning goal..." aria-label="Learning Goal" />
-        <button id="save-goal" type="button">Save</button>
-        <button id="search-goal" type="button">🔍 Search</button>
+        <div class="goal-btn-row">
+          <button id="save-goal" type="button" class="btn-primary">Save</button>
+          <button id="search-goal" type="button" class="btn-secondary">🔍 Search</button>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Quick-Access Feature Toggles -->
-    <div class="toggles-container">
-      <label class="toggle-row" for="toggle-shorts">
-        <div class="toggle-info">
-          <span class="toggle-icon">🚫</span>
-          <span class="toggle-label">Shorts Blocker</span>
+    <!-- Section 1: Protections -->
+    <div class="section-heading">Protections</div>
+    <div class="card-group">
+      <!-- 1. Shorts Blocker -->
+      <label class="feature-row" for="toggle-shorts">
+        <div class="icon-box icon-red">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+          </svg>
+        </div>
+        <div class="feature-info">
+          <div class="feature-title">Shorts blocker</div>
+          <div class="feature-desc">Redirects away from Shorts automatically</div>
         </div>
         <div class="toggle-switch">
           <input type="checkbox" id="toggle-shorts" role="switch" aria-checked="false" />
           <span class="slider"></span>
         </div>
       </label>
-      
-      <label class="toggle-row" for="toggle-focus">
-        <div class="toggle-info">
-          <span class="toggle-icon">🧠</span>
-          <span class="toggle-label">Focus Mode</span>
+
+      <!-- 2. Focus Mode -->
+      <label class="feature-row" for="toggle-focus">
+        <div class="icon-box icon-emerald">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <div class="feature-info">
+          <div class="feature-title">Focus mode</div>
+          <div class="feature-desc">Hides recommendations, comments and sidebar</div>
         </div>
         <div class="toggle-switch">
           <input type="checkbox" id="toggle-focus" role="switch" aria-checked="false" />
@@ -72,278 +115,195 @@
         </div>
       </label>
 
-      <label class="toggle-row" for="toggle-ghost-shield">
-        <div class="toggle-info">
-          <span class="toggle-icon">👻</span>
-          <span class="toggle-label">Ghost Shield (Strict Purge)</span>
+      <!-- 3. Ghost Shield -->
+      <label class="feature-row" for="toggle-ghost-shield">
+        <div class="icon-box icon-purple">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19v1a3 3 0 0 0 6 0v-1"/>
+            <path d="M12 2a8 8 0 0 0-8 8c0 3.5 2 6 2 8h12c0-2 2-4.5 2-8a8 8 0 0 0-8-8z"/>
+          </svg>
+        </div>
+        <div class="feature-info">
+          <div class="feature-title">Ghost shield</div>
+          <div class="feature-desc">Purges blocked channels, strict playback block</div>
         </div>
         <div class="toggle-switch">
           <input type="checkbox" id="toggle-ghost-shield" role="switch" aria-checked="false" />
           <span class="slider"></span>
         </div>
       </label>
-      
-      <label class="toggle-row" for="toggle-study">
-        <div class="toggle-info">
-          <span class="toggle-icon">🎓</span>
-          <span class="toggle-label">Study Mode</span>
-        </div>
-        <div class="toggle-switch">
-          <input type="checkbox" id="toggle-study" role="switch" aria-checked="false" />
-          <span class="slider"></span>
-        </div>
-      </label>
-
-      <label class="toggle-row" for="toggle-goal">
-        <div class="toggle-info">
-          <span class="toggle-icon">🎯</span>
-          <span class="toggle-label">Goal Mode (Strict)</span>
-        </div>
-        <div class="toggle-switch">
-          <input type="checkbox" id="toggle-goal" role="switch" aria-checked="false" />
-          <span class="slider"></span>
-        </div>
-      </label>
-
-      <label class="toggle-row" for="toggle-time-manager">
-        <div class="toggle-info">
-          <span class="toggle-icon">⏳</span>
-          <span class="toggle-label">Time Manager</span>
-        </div>
-        <div class="toggle-switch">
-          <input type="checkbox" id="toggle-time-manager" role="switch" aria-checked="false" />
-          <span class="slider"></span>
-        </div>
-      </label>
-
-      <label class="toggle-row" for="toggle-auto-skip-ads">
-        <div class="toggle-info">
-          <span class="toggle-icon">⏭️</span>
-          <span class="toggle-label">Auto Skip Ads</span>
-        </div>
-        <div class="toggle-switch">
-          <input type="checkbox" id="toggle-auto-skip-ads" role="switch" aria-checked="false" />
-          <span class="slider"></span>
-        </div>
-      </label>
-
-      <label class="toggle-row" for="pop-audioEffects">
-        <div class="toggle-info">
-          <span class="toggle-icon">🔊</span>
-          <span class="toggle-label">Audio Effects</span>
-        </div>
-        <div class="toggle-switch">
-          <input type="checkbox" id="pop-audioEffects" role="switch" aria-checked="false" />
-          <span class="slider"></span>
-        </div>
-      </label>
     </div>
 
-    <!-- Audio Suite ("Sound Studio Pro") -->
-    <div class="audio-enhance-container">
-      <!-- Premium Audio Header -->
-      <div class="audio-header">
-        <div class="audio-header-left">
-          <div class="audio-icon-wrap">🎛️</div>
-          <div>
-            <div class="audio-title">Sound Studio</div>
-            <div class="audio-subtitle">Audio Engine Pro</div>
+    <!-- Section 2: Manage -->
+    <div class="section-heading">Manage</div>
+    <div class="card-group">
+      <!-- Accordion 1: Time Manager -->
+      <div class="accordion-item" id="acc-time-manager">
+        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+          <div class="icon-box icon-amber">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
           </div>
-        </div>
-        <label class="toggle-switch audio-header-toggle" for="pop-audioEffects-header" title="Toggle Sound Studio">
-          <input type="checkbox" id="pop-audioEffects-header" role="switch" aria-label="Toggle Sound Studio" aria-checked="false" />
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <!-- 60 FPS Spectrum Visualizer -->
-      <div class="spectrum-wrap">
-        <canvas id="pop-spectrum-canvas" width="320" height="50" class="spectrum-canvas"></canvas>
-      </div>
-
-      <!-- Thermal & High Volume Warning Alert -->
-      <div id="pop-thermal-alert" class="pop-thermal-alert" style="display: none; margin-bottom: 8px; padding: 6px 10px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 6px; color: #fbbf24; font-size: 10px; line-height: 1.35;">
-        <span style="font-weight: 700;">🔥 High Amplification Alert:</span> High volume / bass heats laptop speakers &amp; causes clipping. Recommended: 150%–250% or headphones.
-      </div>
-
-      <!-- Volume & Bass Sliders -->
-      <div class="audio-sliders-grid">
-        <!-- Volume Card -->
-        <div class="audio-slider-card vol-card">
-          <div class="slider-card-header">
-            <span class="slider-card-label">⚡ Vol</span>
-            <span id="pop-vol-value" class="slider-card-val vol-val">100%</span>
+          <div class="feature-info">
+            <div class="feature-title">Time manager</div>
+            <div class="feature-desc" id="acc-time-desc">2h daily limit • Quiet hours active</div>
           </div>
-          <input type="range" id="pop-vol-slider" min="100" max="600" step="10" value="100" class="audio-range vol-range" aria-label="Volume Booster" />
+          <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </div>
-        <!-- Bass Card -->
-        <div class="audio-slider-card bass-card">
-          <div class="slider-card-header">
-            <span class="slider-card-label">🔉 Bass</span>
-            <span id="pop-bass-value" class="slider-card-val bass-val">0 dB</span>
-          </div>
-          <input type="range" id="pop-bass-slider" min="0" max="20" step="1" value="0" class="audio-range bass-range" aria-label="Bass Booster" />
-        </div>
-      </div>
-
-      <!-- Noise Remover & Anti-Distortion Clarifier -->
-      <div class="pop-noise-remover-row" style="margin-bottom: 10px; padding: 6px 10px; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 6px;">
-          <span>🛡️</span>
-          <div>
-            <div style="font-size: 11px; font-weight: 600; color: #f1f5f9;">Noise Remover &amp; Clarifier</div>
-            <div style="font-size: 9px; color: #94a3b8;">Anti-hiss, subsonic filter &amp; soft limiter</div>
-          </div>
-        </div>
-        <label class="toggle-switch" for="pop-noise-remover-toggle" style="width: 32px; height: 18px;">
-          <input type="checkbox" id="pop-noise-remover-toggle" checked role="switch" aria-checked="true" />
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <!-- 10-Band EQ Section -->
-      <div class="pop-eq-section" id="pop-eq-section">
-        <div class="eq-header-row">
-          <span class="eq-section-title">🎚 10-Band EQ</span>
-          <div class="eq-actions">
-            <button id="pop-eq-reset" class="pop-eq-btn">Reset</button>
-            <label class="toggle-switch eq-toggle-switch" for="pop-eq-toggle">
-              <input type="checkbox" id="pop-eq-toggle" checked role="switch" aria-checked="true" />
+        <div class="accordion-body">
+          <label class="sub-toggle-row" for="toggle-time-manager">
+            <span class="sub-toggle-label">Enable Daily Time Budget</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle-time-manager" role="switch" aria-checked="false" />
               <span class="slider"></span>
-            </label>
-          </div>
+            </div>
+          </label>
         </div>
+      </div>
 
-        <!-- Preset Chips -->
-        <div id="pop-eq-preset-chips" class="preset-chips-container" role="group" aria-label="Equalizer Presets">
-          <button data-preset="Flat" class="preset-chip" aria-pressed="false">Flat</button>
-          <button data-preset="Bass Boost" class="preset-chip" aria-pressed="false">Bass Boost</button>
-          <button data-preset="Vocal Booster" class="preset-chip" aria-pressed="false">Vocal</button>
-          <button data-preset="Treble Boost" class="preset-chip" aria-pressed="false">Treble</button>
-          <button data-preset="Rock" class="preset-chip" aria-pressed="false">Rock</button>
-          <button data-preset="Pop" class="preset-chip" aria-pressed="false">Pop</button>
-          <button data-preset="Acoustic" class="preset-chip" aria-pressed="false">Acoustic</button>
-          <button data-preset="Electronic" class="preset-chip" aria-pressed="false">Electronic</button>
+      <!-- Accordion 2: Focus Features -->
+      <div class="accordion-item" id="acc-focus-features">
+        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+          <div class="icon-box icon-teal">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="4" y1="21" x2="4" y2="14"/>
+              <line x1="4" y1="10" x2="4" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12" y2="3"/>
+              <line x1="20" y1="21" x2="20" y2="16"/>
+              <line x1="20" y1="12" x2="20" y2="3"/>
+              <line x1="1" y1="14" x2="7" y2="14"/>
+              <line x1="9" y1="8" x2="15" y2="8"/>
+              <line x1="17" y1="16" x2="23" y2="16"/>
+            </svg>
+          </div>
+          <div class="feature-info">
+            <div class="feature-title">Focus features</div>
+            <div class="feature-desc" id="acc-focus-desc">Study Mode, Goal Mode, Ad Skipper</div>
+          </div>
+          <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
         </div>
+        <div class="accordion-body">
+          <label class="sub-toggle-row" for="toggle-study">
+            <span class="sub-toggle-label">🎓 Study Mode (Pomodoro Timer)</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle-study" role="switch" aria-checked="false" />
+              <span class="slider"></span>
+            </div>
+          </label>
+          <label class="sub-toggle-row" for="toggle-goal">
+            <span class="sub-toggle-label">🎯 Goal Mode (Strict Intentional)</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle-goal" role="switch" aria-checked="false" />
+              <span class="slider"></span>
+            </div>
+          </label>
+          <label class="sub-toggle-row" for="toggle-auto-skip-ads">
+            <span class="sub-toggle-label">⚡ Auto Skip Ads (16x Turbo)</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="toggle-auto-skip-ads" role="switch" aria-checked="false" />
+              <span class="slider"></span>
+            </div>
+          </label>
+        </div>
+      </div>
 
-        <!-- Hidden select for compatibility -->
-        <select id="pop-eq-preset" aria-label="Equalizer Preset" style="display:none;">
-          <option value="Flat">Flat</option>
-          <option value="Bass Boost">Bass Boost</option>
-          <option value="Vocal Booster">Vocal Booster</option>
-          <option value="Treble Boost">Treble Boost</option>
-          <option value="Rock">Rock</option>
-          <option value="Pop">Pop</option>
-          <option value="Acoustic">Acoustic</option>
-          <option value="Electronic">Electronic</option>
-          <option value="Custom">Custom</option>
-        </select>
+      <!-- Accordion 3: Audio Controls -->
+      <div class="accordion-item" id="acc-audio-controls">
+        <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+          <div class="icon-box icon-magenta">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 10v4"/>
+              <path d="M6 6v12"/>
+              <path d="M10 3v18"/>
+              <path d="M14 7v10"/>
+              <path d="M18 5v14"/>
+              <path d="M22 10v4"/>
+            </svg>
+          </div>
+          <div class="feature-info">
+            <div class="feature-title">Audio controls</div>
+            <div class="feature-desc" id="acc-audio-desc">Booster on • Custom 10-Band EQ</div>
+          </div>
+          <svg class="chevron-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+        <div class="accordion-body">
+          <label class="sub-toggle-row" for="pop-audioEffects">
+            <span class="sub-toggle-label">🔊 Web Audio Engine DSP</span>
+            <div class="toggle-switch">
+              <input type="checkbox" id="pop-audioEffects" role="switch" aria-checked="false" />
+              <span class="slider"></span>
+            </div>
+          </label>
 
-        <!-- EQ Band Rack with 10 vertical sliders -->
-        <div class="pop-eq-rack" id="pop-eq-rack">
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-0" class="pop-eq-val val-32">0</span>
-            <input type="range" id="pop-eq-slider-0" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="32Hz Gain" />
-            <span class="pop-eq-freq freq-32">32</span>
+          <!-- Volume & Bass Cards -->
+          <div class="audio-sliders-grid">
+            <div class="slider-card">
+              <div class="slider-card-head">
+                <span>⚡ Volume Boost</span>
+                <span id="pop-vol-value" class="slider-val-vol">100%</span>
+              </div>
+              <input type="range" id="pop-vol-slider" min="100" max="600" step="10" value="100" class="audio-range" aria-label="Volume Booster" />
+            </div>
+
+            <div class="slider-card">
+              <div class="slider-card-head">
+                <span>🔉 Bass Boost</span>
+                <span id="pop-bass-value" class="slider-val-bass">0 dB</span>
+              </div>
+              <input type="range" id="pop-bass-slider" min="0" max="20" step="1" value="0" class="audio-range" aria-label="Bass Booster" />
+            </div>
           </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-1" class="pop-eq-val val-64">0</span>
-            <input type="range" id="pop-eq-slider-1" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="64Hz Gain" />
-            <span class="pop-eq-freq freq-64">64</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-2" class="pop-eq-val val-125">0</span>
-            <input type="range" id="pop-eq-slider-2" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="125Hz Gain" />
-            <span class="pop-eq-freq freq-125">125</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-3" class="pop-eq-val val-250">0</span>
-            <input type="range" id="pop-eq-slider-3" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="250Hz Gain" />
-            <span class="pop-eq-freq freq-250">250</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-4" class="pop-eq-val val-500">0</span>
-            <input type="range" id="pop-eq-slider-4" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="500Hz Gain" />
-            <span class="pop-eq-freq freq-500">500</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-5" class="pop-eq-val val-1k">0</span>
-            <input type="range" id="pop-eq-slider-5" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="1kHz Gain" />
-            <span class="pop-eq-freq freq-1k">1k</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-6" class="pop-eq-val val-2k">0</span>
-            <input type="range" id="pop-eq-slider-6" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="2kHz Gain" />
-            <span class="pop-eq-freq freq-2k">2k</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-7" class="pop-eq-val val-4k">0</span>
-            <input type="range" id="pop-eq-slider-7" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="4kHz Gain" />
-            <span class="pop-eq-freq freq-4k">4k</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-8" class="pop-eq-val val-8k">0</span>
-            <input type="range" id="pop-eq-slider-8" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="8kHz Gain" />
-            <span class="pop-eq-freq freq-8k">8k</span>
-          </div>
-          <div class="pop-eq-band">
-            <span id="pop-eq-val-9" class="pop-eq-val val-16k">0</span>
-            <input type="range" id="pop-eq-slider-9" class="pop-eq-slider" min="-12" max="12" step="0.5" value="0" style="writing-mode: vertical-lr; direction: rtl;" aria-label="16kHz Gain" />
-            <span class="pop-eq-freq freq-16k">16k</span>
+
+          <!-- Preset Chips -->
+          <div class="preset-label">EQ Presets</div>
+          <div id="pop-eq-preset-chips" class="preset-chips-container" role="group" aria-label="Equalizer Presets">
+            <button data-preset="Flat" class="preset-chip" type="button">Flat</button>
+            <button data-preset="Bass Boost" class="preset-chip" type="button">Bass Boost</button>
+            <button data-preset="Vocal Booster" class="preset-chip" type="button">Vocal</button>
+            <button data-preset="Treble Boost" class="preset-chip" type="button">Treble</button>
+            <button data-preset="Rock" class="preset-chip" type="button">Rock</button>
+            <button data-preset="Pop" class="preset-chip" type="button">Pop</button>
+            <button data-preset="Acoustic" class="preset-chip" type="button">Acoustic</button>
+            <button data-preset="Electronic" class="preset-chip" type="button">Electronic</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Custom Blocklist -->
-    <div class="blocklist-container">
-      <div class="blocklist-title">Custom Blocklist</div>
-      <div class="blocklist-group">
-        <label for="pop-blocked-keywords" class="blocklist-label">Blocked Keywords (Comma-Separated)</label>
-        <input type="text" id="pop-blocked-keywords" class="blocklist-input" placeholder="e.g. gaming, vlog">
-      </div>
-      <div class="blocklist-group">
-        <label for="pop-blocked-channels" class="blocklist-label">Blocked Channels (Comma-Separated)</label>
-        <input type="text" id="pop-blocked-channels" class="blocklist-input" placeholder="e.g. GamingChannel">
-      </div>
+    <!-- Hidden compatibility elements for existing background listeners & tests -->
+    <div style="display:none !important;" aria-hidden="true">
+      <input type="checkbox" id="pop-audioEffects-header" checked />
+      <input type="checkbox" id="pop-noise-remover-toggle" checked />
+      <input type="checkbox" id="pop-eq-toggle" checked />
+      <select id="pop-eq-preset"><option value="Flat">Flat</option></select>
+      <button id="pop-eq-reset" type="button">Reset</button>
+      <div id="pop-thermal-alert"></div>
+      <canvas id="pop-spectrum-canvas" width="10" height="10"></canvas>
+      <div id="pop-eq-rack"></div>
+      <input type="text" id="pop-blocked-keywords" />
+      <input type="text" id="pop-blocked-channels" />
+      <div id="popup-rank-tier"></div>
+      <div id="today-time"></div>
+      <div id="learning-time"></div>
+      <div id="focus-score"></div>
     </div>
 
-    <!-- Session Summary Stats Grid -->
-    <div class="stats-container">
-      <div class="stats-grid">
-        <div class="stat-card rank-card">
-          <div class="stat-header">
-            <span class="stat-title">Player Rank</span>
-            <span class="stat-badge gold-badge">AP Rank</span>
-          </div>
-          <div class="stat-value gold-text" id="popup-rank-tier">🥉 Bronze Focus (0 AP)</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-header">
-            <span class="stat-title">Today's Time</span>
-            <span class="stat-badge indigo-badge">Total</span>
-          </div>
-          <div class="stat-value indigo-text" id="today-time">0h 0m</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-header">
-            <span class="stat-title">Learning Time</span>
-            <span class="stat-badge sky-badge">Study</span>
-          </div>
-          <div class="stat-value sky-text" id="learning-time">0h 0m</div>
-        </div>
-
-        <div class="stat-card focus-score-card">
-          <div class="stat-header">
-            <span class="stat-title">Focus Score</span>
-            <span class="stat-badge emerald-badge">Score</span>
-          </div>
-          <div class="stat-value emerald-text" id="focus-score">0%</div>
-        </div>
-      </div>
-    </div>
+    <!-- Footer Action -->
+    <footer class="footer">
+      <button id="open-dashboard-btn" class="open-dashboard-btn" type="button">
+        <span>Open full dashboard</span>
+        <span class="btn-arrow">↗</span>
+      </button>
+    </footer>
   </div>
 
   <script src="../utils/browser-detection.js"></script>

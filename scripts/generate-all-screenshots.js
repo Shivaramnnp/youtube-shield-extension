@@ -220,9 +220,24 @@ fs.writeFileSync(path.resolve(WORK_DIR, 'popup.js'), popupJs);
 const popupHarness = popupHtmlRaw.replace('<head>', '<head>' + mockStorageScript + `
 <style>
   body { margin: 0; padding: 16px; background: #0b0f19; display: flex; justify-content: center; }
-  .popup-container { width: 380px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; }
+  .popup-container { width: 334px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; }
 </style>
-`);
+`).replace('</body>', `
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      const timer = document.getElementById('session-time');
+      if (timer) timer.textContent = '00:02:41';
+      const s1 = document.getElementById('toggle-shorts');
+      if (s1) s1.checked = true;
+      const s2 = document.getElementById('toggle-focus');
+      if (s2) s2.checked = true;
+      const s3 = document.getElementById('toggle-ghost-shield');
+      if (s3) s3.checked = true;
+    }, 80);
+  });
+</script>
+</body>`);
 const popupHarnessPath = path.resolve(WORK_DIR, 'popup-harness.html');
 fs.writeFileSync(popupHarnessPath, popupHarness);
 

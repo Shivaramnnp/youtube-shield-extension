@@ -215,6 +215,47 @@ document.addEventListener('DOMContentLoaded', async () => {
       const totalAP = gamification.totalPoints || 0;
       const rankEl = document.getElementById('popup-rank-tier');
       if (rankEl) rankEl.textContent = `${rankIcon} ${rankTier} (${totalAP} AP)`;
+
+      // Accordion Dynamic Subtitles
+      const tmDesc = document.getElementById('acc-time-desc');
+      if (tmDesc) {
+        if (settings.timeManager && settings.timeManager.enabled) {
+          const mins = settings.timeManager.dailyLimitMinutes || 60;
+          const h = (mins / 60).toFixed(mins % 60 === 0 ? 0 : 1);
+          const sched = settings.timeManager.scheduleEnabled ? ` • quiet after ${settings.timeManager.scheduleEnd || '10 PM'}` : '';
+          tmDesc.textContent = `${h}h daily limit${sched}`;
+        } else {
+          tmDesc.textContent = '2h daily limit • Inactive';
+        }
+      }
+
+      const focusDesc = document.getElementById('acc-focus-desc');
+      if (focusDesc) {
+        let count = 0;
+        if (settings.studyMode) count++;
+        if (settings.goalMode) count++;
+        if (settings.autoSkipAds !== false) count++;
+        if (settings.ghostShield !== false) count++;
+        focusDesc.textContent = `${count} control${count === 1 ? '' : 's'} active`;
+      }
+
+      const audioDesc = document.getElementById('acc-audio-desc');
+      if (audioDesc) {
+        const vbState = settings.volumeBooster || {};
+        const vol = vbState.volumeLevel != null ? vbState.volumeLevel : 100;
+        const preset = vbState.preset || 'Custom';
+        audioDesc.textContent = `Booster ${vol}% • ${preset} EQ`;
+      }
+
+      // Circular Ring Progress
+      const ringProg = document.getElementById('timer-ring-progress');
+      if (ringProg) {
+        const totalCircumference = 364.4; // 2 * PI * 58
+        const sec = (tracking.dailyLearningTime && tracking.dailyLearningTime[today]) || (tracking.dailyWatchTime && tracking.dailyWatchTime[today]) || 0;
+        const fraction = Math.min(1, Math.max(0, (sec % 3600) / 3600));
+        const offset = totalCircumference * (1 - (fraction > 0 ? fraction : 0.08));
+        ringProg.style.strokeDashoffset = String(offset);
+      }
     };
 
     updateUIState(settings, tracking);
@@ -655,7 +696,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       openSettings.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') openOptions();
       });
+
+      const openDashboardBtn = document.getElementById('open-dashboard-btn');
+      if (openDashboardBtn) {
+        openDashboardBtn.addEventListener('click', openOptions);
+      }
     }
+
+    // Accordion Toggle Handlers for Manage Section
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const parent = header.closest('.accordion-item');
+        if (!parent) return;
+        const isExpanded = parent.classList.toggle('active');
+        header.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      });
+      header.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          header.click();
+        }
+      });
+    });
 
     // Session Timer simulation for UI
     let sessionTime = 0;
